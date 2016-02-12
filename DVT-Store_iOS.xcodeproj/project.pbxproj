@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */; };
+		ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A51C6DC19D00953E9C /* ViewController.swift */; };
+		ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22A71C6DC19D00953E9C /* Main.storyboard */; };
+		ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */; };
+		ED3F22AE1C6DC19D00953E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */; };
+		ED3F22B11C6DC19D00953E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22AF1C6DC19D00953E9C /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DVT-Store_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED3F22A51C6DC19D00953E9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED3F22A81C6DC19D00953E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED3F22AB1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DVT_Store_iOS.xcdatamodel; sourceTree = "<group>"; };
+		ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED3F22B01C6DC19D00953E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED3F22B21C6DC19D00953E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED3F229D1C6DC19D00953E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED3F22971C6DC19D00953E9C = {
+			isa = PBXGroup;
+			children = (
+				ED3F22A21C6DC19D00953E9C /* DVT-Store_iOS */,
+				ED3F22A11C6DC19D00953E9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED3F22A11C6DC19D00953E9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED3F22A21C6DC19D00953E9C /* DVT-Store_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */,
+				ED3F22A51C6DC19D00953E9C /* ViewController.swift */,
+				ED3F22A71C6DC19D00953E9C /* Main.storyboard */,
+				ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */,
+				ED3F22AF1C6DC19D00953E9C /* LaunchScreen.storyboard */,
+				ED3F22B21C6DC19D00953E9C /* Info.plist */,
+				ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */,
+			);
+			path = "DVT-Store_iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED3F229F1C6DC19D00953E9C /* DVT-Store_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3F22B51C6DC19D00953E9C /* Build configuration list for PBXNativeTarget "DVT-Store_iOS" */;
+			buildPhases = (
+				ED3F229C1C6DC19D00953E9C /* Sources */,
+				ED3F229D1C6DC19D00953E9C /* Frameworks */,
+				ED3F229E1C6DC19D00953E9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DVT-Store_iOS";
+			productName = "DVT-Store_iOS";
+			productReference = ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED3F22981C6DC19D00953E9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = DVT;
+				TargetAttributes = {
+					ED3F229F1C6DC19D00953E9C = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = ED3F229B1C6DC19D00953E9C /* Build configuration list for PBXProject "DVT-Store_iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED3F22971C6DC19D00953E9C;
+			productRefGroup = ED3F22A11C6DC19D00953E9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED3F229F1C6DC19D00953E9C /* DVT-Store_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED3F229E1C6DC19D00953E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3F22B11C6DC19D00953E9C /* LaunchScreen.storyboard in Resources */,
+				ED3F22AE1C6DC19D00953E9C /* Assets.xcassets in Resources */,
+				ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED3F229C1C6DC19D00953E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */,
+				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
+				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED3F22A71C6DC19D00953E9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED3F22A81C6DC19D00953E9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED3F22AF1C6DC19D00953E9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED3F22B01C6DC19D00953E9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED3F22B31C6DC19D00953E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED3F22B41C6DC19D00953E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED3F22B61C6DC19D00953E9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DVT-Store_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED3F22B71C6DC19D00953E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DVT-Store_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED3F229B1C6DC19D00953E9C /* Build configuration list for PBXProject "DVT-Store_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3F22B31C6DC19D00953E9C /* Debug */,
+				ED3F22B41C6DC19D00953E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED3F22B51C6DC19D00953E9C /* Build configuration list for PBXNativeTarget "DVT-Store_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3F22B61C6DC19D00953E9C /* Debug */,
+				ED3F22B71C6DC19D00953E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED3F22AB1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodel */,
+			);
+			currentVersion = ED3F22AB1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodel */;
+			path = DVT_Store_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ED3F22981C6DC19D00953E9C /* Project object */;
+}
