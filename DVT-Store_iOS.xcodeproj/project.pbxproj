@@ -13,6 +13,11 @@
 		ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */; };
 		ED3F22AE1C6DC19D00953E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */; };
 		ED3F22B11C6DC19D00953E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22AF1C6DC19D00953E9C /* LaunchScreen.storyboard */; };
+		ED3F22B91C6DD24600953E9C /* Mac1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22B81C6DD24600953E9C /* Mac1.jpg */; };
+		ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */; };
+		ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BC1C6DD94400953E9C /* iphone1.jpg */; };
+		ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BD1C6DD94400953E9C /* mac2.jpg */; };
+		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3F22B01C6DC19D00953E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3F22B21C6DC19D00953E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED3F22B81C6DD24600953E9C /* Mac1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mac1.jpg; sourceTree = "<group>"; };
+		ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = featuredProduct.swift; sourceTree = "<group>"; };
+		ED3F22BC1C6DD94400953E9C /* iphone1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone1.jpg; sourceTree = "<group>"; };
+		ED3F22BD1C6DD94400953E9C /* mac2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac2.jpg; sourceTree = "<group>"; };
+		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,14 @@
 				ED3F22A51C6DC19D00953E9C /* ViewController.swift */,
 				ED3F22A71C6DC19D00953E9C /* Main.storyboard */,
 				ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */,
+				ED3F22B81C6DD24600953E9C /* Mac1.jpg */,
+				ED3F22BC1C6DD94400953E9C /* iphone1.jpg */,
+				ED3F22BD1C6DD94400953E9C /* mac2.jpg */,
+				ED3F22BE1C6DD94400953E9C /* iphone2.jpg */,
 				ED3F22AF1C6DC19D00953E9C /* LaunchScreen.storyboard */,
 				ED3F22B21C6DC19D00953E9C /* Info.plist */,
 				ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */,
+				ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -126,7 +141,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3F22B11C6DC19D00953E9C /* LaunchScreen.storyboard in Resources */,
+				ED3F22B91C6DD24600953E9C /* Mac1.jpg in Resources */,
+				ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */,
 				ED3F22AE1C6DC19D00953E9C /* Assets.xcassets in Resources */,
+				ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */,
+				ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */,
 				ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */,
+				ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */,
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
 			);

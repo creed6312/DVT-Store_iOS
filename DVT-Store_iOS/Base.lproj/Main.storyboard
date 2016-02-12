@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DVT_Store_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK1-kn-igJ">
+                                <rect key="frame" x="20" y="28" width="560" height="218"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-UN-UP8">
+                                        <rect key="frame" x="8" y="8" width="195" height="153"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="153" id="7v3-8O-I2E"/>
+                                            <constraint firstAttribute="width" constant="195" id="ErY-bC-fqd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGW-zj-XNV">
+                                        <rect key="frame" x="211" y="37" width="341" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRM-0G-hjF">
+                                        <rect key="frame" x="211" y="8" width="341" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTP-go-Bor">
+                                        <rect key="frame" x="8" y="169" width="195" height="30"/>
+                                        <state key="normal" title="Go To Cart"/>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6gl-Wv-JRe">
+                                        <rect key="frame" x="211" y="66" width="341" height="133"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="133" id="qNZ-S7-HpT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="bottom" secondItem="CTP-go-Bor" secondAttribute="bottom" id="0XN-3i-TY5"/>
+                                    <constraint firstAttribute="height" constant="218" id="9iy-Kz-Lux"/>
+                                    <constraint firstItem="CTP-go-Bor" firstAttribute="top" secondItem="j9Y-UN-UP8" secondAttribute="bottom" constant="8" symbolic="YES" id="Byu-T4-NES"/>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="top" secondItem="bGW-zj-XNV" secondAttribute="bottom" constant="8" symbolic="YES" id="C3T-ea-rcs"/>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="trailing" secondItem="bGW-zj-XNV" secondAttribute="trailing" id="CWG-my-Mkp"/>
+                                    <constraint firstItem="bGW-zj-XNV" firstAttribute="leading" secondItem="j9Y-UN-UP8" secondAttribute="trailing" constant="8" symbolic="YES" id="ETb-wd-2Bc"/>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="trailing" secondItem="hK1-kn-igJ" secondAttribute="trailingMargin" id="RPy-GR-AxY"/>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="trailing" secondItem="DRM-0G-hjF" secondAttribute="trailing" id="V1p-Bf-Vml"/>
+                                    <constraint firstItem="6gl-Wv-JRe" firstAttribute="leading" secondItem="j9Y-UN-UP8" secondAttribute="trailing" constant="8" symbolic="YES" id="WIs-hU-SG7"/>
+                                    <constraint firstItem="DRM-0G-hjF" firstAttribute="leading" secondItem="j9Y-UN-UP8" secondAttribute="trailing" constant="8" symbolic="YES" id="b9C-6K-4Ik"/>
+                                    <constraint firstItem="j9Y-UN-UP8" firstAttribute="leading" secondItem="CTP-go-Bor" secondAttribute="leading" id="ggR-7n-5nk"/>
+                                    <constraint firstItem="j9Y-UN-UP8" firstAttribute="trailing" secondItem="CTP-go-Bor" secondAttribute="trailing" id="iue-59-9r8"/>
+                                    <constraint firstItem="j9Y-UN-UP8" firstAttribute="leading" secondItem="hK1-kn-igJ" secondAttribute="leading" constant="8" id="jNH-Oy-uC8"/>
+                                    <constraint firstItem="j9Y-UN-UP8" firstAttribute="top" secondItem="DRM-0G-hjF" secondAttribute="top" id="kQE-ay-nZX"/>
+                                    <constraint firstItem="j9Y-UN-UP8" firstAttribute="top" secondItem="hK1-kn-igJ" secondAttribute="top" constant="8" id="ma9-yX-fo6"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="g44-r5-Ryc" appends="YES" id="ph6-wl-rGx"/>
+                                    <outletCollection property="gestureRecognizers" destination="lUR-Q9-vF5" appends="YES" id="DCr-0d-2Z0"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hK1-kn-igJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="R7g-vb-phe"/>
+                            <constraint firstItem="hK1-kn-igJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Vxf-ZV-PpP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hK1-kn-igJ" secondAttribute="bottom" constant="354" id="c3G-5o-RPq"/>
+                            <constraint firstItem="hK1-kn-igJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vQ9-z3-ViJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c3G-5o-RPq"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="featuredItem" destination="j9Y-UN-UP8" id="p11-YY-Hwh"/>
+                        <outlet property="featuredProductDescription" destination="6gl-Wv-JRe" id="iJO-ky-7mc"/>
+                        <outlet property="featuredProductName" destination="DRM-0G-hjF" id="9SR-fb-Ube"/>
+                        <outlet property="featuredProductPrice" destination="bGW-zj-XNV" id="FXq-PD-479"/>
+                        <outlet property="viewForFeaturedItem" destination="hK1-kn-igJ" id="dq3-7J-xgr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="g44-r5-Ryc">
+                    <connections>
+                        <action selector="swipethroughFeaturedItem:" destination="BYZ-38-t0r" id="ApT-zb-dyR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="lUR-Q9-vF5">
+                    <connections>
+                        <action selector="swipethroughFeaturedItem:" destination="BYZ-38-t0r" id="GjQ-ml-HRY"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="89" y="320"/>
         </scene>
     </scenes>
 </document>
