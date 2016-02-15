@@ -8,14 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
+    //Mark: Featured Products view properties
     
     @IBOutlet weak var featuredItem: UIImageView!
     @IBOutlet weak var featuredProductName: UILabel!
     @IBOutlet weak var featuredProductPrice: UILabel!
     @IBOutlet weak var featuredProductDescription: UITextView!
     
+    @IBOutlet weak var productTableView: UITableView!
+    
+    //Mark: TableView items
+    
+
+  
     @IBOutlet weak var viewForFeaturedItem: UIView!
+    
+    //Mark: properties
+    
     var products = [FeaturedProduct]()
     let photo1 = UIImage(named: "mac1.jpg")
     let photo2 = UIImage(named: "mac2.jpg")
@@ -29,10 +39,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let featuredProduct = FeaturedProduct(name: "Laptop",price: 28000.00,description: "This product",productImage: photo1!)
-        let featuredProduct2 = FeaturedProduct(name: "Laptop2",price: 22000.00,description: "This product",productImage: photo2!)
-        let featuredProduct3 = FeaturedProduct(name: "iphone1",price: 8500.00,description: "This product",productImage: photo3!)
-        let featuredProduct4 = FeaturedProduct(name: "iphone2",price: 6500.00,description: "This product fghdfgsdlfjdhsflkdslkf sdlkfhkljsdhfkldshlk fsdklnvfjksdghtlskdnvlkdfsjgklsdjfl;jds;lfjk;lsdfdskl;jfosd f;kdsjflksdjfkldsj flisdjkfklsdhtkldasjflksdfjklsdjfklds",productImage: photo4!)
+        let featuredProduct = FeaturedProduct(name: "Laptop",price: 28000.00,description: "This product",productImage: photo1!,url: " url",id: "12 ")
+        let featuredProduct2 = FeaturedProduct(name: "Laptop2",price: 22000.00,description: "This product",productImage: photo2!,url: "url",id: "123")
+        let featuredProduct3 = FeaturedProduct(name: "iphone1",price: 8500.00,description: "This product",productImage: photo3!,url: "url",id: "1234")
+        let featuredProduct4 = FeaturedProduct(name: "iphone2",price: 6500.00,description: "This product fghdfgsdlfjdhsflkdslkf sdlkfhkljsdhfkldshlk fsdklnvfjksdghtlskdnvlkdfsjgklsdjfl;jds;lfjk;lsdfdskl;jfosd f;kdsjflksdjfkldsj flisdjkfklsdhtkldasjflksdfjklsdjfklds",productImage: photo4!,url: "url",id: "23423")
         
         products += [featuredProduct,featuredProduct2, featuredProduct3, featuredProduct4 ]
         
@@ -107,6 +117,32 @@ class ViewController: UIViewController {
     {
         self.performSegueWithIdentifier("GoToViewController", sender:self)
     }
+    
+    func numberOfSelectionInTableView(tableView: UITableView)->Int
+    {
+    
+        return 0
+    }
+     func numberOfSelectionInTableView(tableView: UITableView,numberOfRowsSection section:Int)-> Int
+    {
+        return products.count
+    }
+    func numberOfSelectionInTableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
+    {
+        let cellIdentifier = "ProductsTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductsTableViewCell
+        
+        //let productCell = FeaturedProduct[indexPath.row]
+       if let p = FeaturedProduct[indexPath.row] as? Activity
+       {
+        
+        }
+        
+        
+        
+        return cell
+    }
+
 
 
 }

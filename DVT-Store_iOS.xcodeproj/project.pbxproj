@@ -18,6 +18,7 @@
 		ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BC1C6DD94400953E9C /* iphone1.jpg */; };
 		ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BD1C6DD94400953E9C /* mac2.jpg */; };
 		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
+		ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ED3F22BC1C6DD94400953E9C /* iphone1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone1.jpg; sourceTree = "<group>"; };
 		ED3F22BD1C6DD94400953E9C /* mac2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac2.jpg; sourceTree = "<group>"; };
 		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
+		ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				ED3F22B21C6DC19D00953E9C /* Info.plist */,
 				ED3F22AA1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld */,
 				ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */,
+				ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */,
+				ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */,
 				ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */,
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
@@ -310,6 +314,7 @@
 				ED3F22B71C6DC19D00953E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

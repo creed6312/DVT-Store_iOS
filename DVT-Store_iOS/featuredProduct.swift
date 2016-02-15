@@ -10,20 +10,30 @@ import Foundation
 import UIKit
 
 public class FeaturedProduct{
+    var ID: String
     var name:String
     var price: Double
     var description: String
     var productImage: UIImage
+    var imageURL: String
     
-    public init(name:String,price: Double,description: String,productImage: UIImage)
+    
+    public init(name:String,price: Double,description: String,productImage:UIImage,url:String, id: String)
     {
-        
         self.description = description
         self.name = name
         self.price = price
         self.productImage = productImage
-        
+        self.ID = id
+        self.imageURL = url
+       
     }
+    
+    
+    
+    
+    
+  
     
     
 }
