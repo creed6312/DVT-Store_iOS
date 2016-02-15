@@ -81,7 +81,7 @@
                                 <rect key="frame" x="20" y="296" width="560" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wuv-n3-9Cz" customClass="ProductsTableViewCell" customModule="DVT_Store_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="featuredProductCell" id="Wuv-n3-9Cz" customClass="ProductsTableViewCell" customModule="DVT_Store_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wuv-n3-9Cz" id="N8J-kp-PTP">
@@ -156,34 +156,6 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1299" y="837"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="AXq-1j-SK5">
-            <objects>
-                <tableViewController id="wg0-XJ-ZDH" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="202" sectionHeaderHeight="28" sectionFooterHeight="28" id="hLq-d8-aXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="4Z4-YX-0l3">
-                                <rect key="frame" x="0.0" y="28" width="600" height="202"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Z4-YX-0l3" id="dCF-bp-ysj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="201"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="wg0-XJ-ZDH" id="HmT-A6-8Da"/>
-                            <outlet property="delegate" destination="wg0-XJ-ZDH" id="93Q-E8-Htz"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LYh-Dh-bGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1217" y="139"/>
         </scene>
     </scenes>
 </document>

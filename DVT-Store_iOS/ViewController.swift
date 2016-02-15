@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //Mark: Featured Products view properties
     
     @IBOutlet weak var featuredItem: UIImageView!
@@ -33,33 +33,29 @@ class ViewController: UIViewController, UITableViewDelegate {
     let photo4 = UIImage(named: "iphone2.jpg")
     var tempCounter: Int = 0
     
-    
+    let manager = ProductDataSource()
+    var myproducts = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.productTableView.delegate = self
+        self.productTableView.dataSource = self
+        self.myproducts = manager.getProducts()
         
-        let featuredProduct = FeaturedProduct(name: "Laptop",price: 28000.00,description: "This product",productImage: photo1!,url: " url",id: "12 ")
-        let featuredProduct2 = FeaturedProduct(name: "Laptop2",price: 22000.00,description: "This product",productImage: photo2!,url: "url",id: "123")
-        let featuredProduct3 = FeaturedProduct(name: "iphone1",price: 8500.00,description: "This product",productImage: photo3!,url: "url",id: "1234")
-        let featuredProduct4 = FeaturedProduct(name: "iphone2",price: 6500.00,description: "This product fghdfgsdlfjdhsflkdslkf sdlkfhkljsdhfkldshlk fsdklnvfjksdghtlskdnvlkdfsjgklsdjfl;jds;lfjk;lsdfdskl;jfosd f;kdsjflksdjfkldsj flisdjkfklsdhtkldasjflksdfjklsdjfklds",productImage: photo4!,url: "url",id: "23423")
         
-        products += [featuredProduct,featuredProduct2, featuredProduct3, featuredProduct4 ]
         
-        //loadProductDataInUIComponents(products)
+        createClasses()
         loopThroughObject(products, counter: tempCounter)
-    
         // Do any additional setup after loading the view, typically from a nib.
+       
         
-        
-        //showing product details in another view controller
+        //showing product details in another view controllertab
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("productDescription:"))
-        featuredItem.userInteractionEnabled = true
-        featuredItem.addGestureRecognizer(tapGestureRecognizer)
-        
-        
-        
+            featuredItem.userInteractionEnabled = true
+            featuredItem.addGestureRecognizer(tapGestureRecognizer)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +63,32 @@ class ViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView,numberOfRowsInSection section:Int)-> Int
+    {
+        return self.myproducts.count
+    }
+    func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
+    {
+        let tempProduct = self.myproducts[indexPath.row] as? FeaturedProduct
+        let cell = tableView.dequeueReusableCellWithIdentifier("featuredProductCell") as? ProductsTableViewCell
+        cell!.productName?.text = tempProduct?.name
+        cell!.productPrice. = String(tempProduct!.price)
+        cell!.productImage.image = tempProduct?.productImage
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        return cell!
+        
+    }
     
+    func createClasses()
+    {
+        let featuredProduct = FeaturedProduct(name: "Laptop",price: 28000.00,description: "This product",productImage: photo1!,url: " url",id: "12 ")
+        let featuredProduct2 = FeaturedProduct(name: "Laptop2",price: 22000.00,description: "This product",productImage: photo2!,url: "url",id: "123")
+        let featuredProduct3 = FeaturedProduct(name: "iphone1",price: 8500.00,description: "This product",productImage: photo3!,url: "url",id: "1234")
+        let featuredProduct4 = FeaturedProduct(name: "iphone2",price: 6500.00,description: "This product fghdfgsdlfjdhsflkdslkf sdlkfhkljsdhfkldshlk fsdklnvfjksdghtlskdnvlkdfsjgklsdjfl;jds;lfjk;lsdfdskl;jfosd f;kdsjflksdjfkldsj flisdjkfklsdhtkldasjflksdfjklsdjfklds",productImage: photo4!,url: "url",id: "23423")
+        
+        products += [featuredProduct,featuredProduct2, featuredProduct3, featuredProduct4 ]
+    }
     
     func loadProductDataInUIComponents(f:FeaturedProduct)
     {
@@ -95,9 +116,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     @IBAction func swipethroughFeaturedItem(sender: UISwipeGestureRecognizer) {
-        
-        
-        
+
         if(sender.direction == .Left){
             
             loopThroughObject(products,counter: tempCounter)
@@ -112,38 +131,10 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    
     func productDescription(image: AnyObject)
     {
         self.performSegueWithIdentifier("GoToViewController", sender:self)
     }
-    
-    func numberOfSelectionInTableView(tableView: UITableView)->Int
-    {
-    
-        return 0
-    }
-     func numberOfSelectionInTableView(tableView: UITableView,numberOfRowsSection section:Int)-> Int
-    {
-        return products.count
-    }
-    func numberOfSelectionInTableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
-    {
-        let cellIdentifier = "ProductsTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductsTableViewCell
-        
-        //let productCell = FeaturedProduct[indexPath.row]
-       if let p = FeaturedProduct[indexPath.row] as? Activity
-       {
-        
-        }
-        
-        
-        
-        return cell
-    }
-
-
 
 }
 
