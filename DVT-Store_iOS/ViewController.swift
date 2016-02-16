@@ -33,6 +33,13 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     let photo4 = UIImage(named: "iphone2.jpg")
     var tempCounter: Int = 0
     
+    var selectedProductImage:UIImage!
+    var selectedProductName:String!
+    var selectedProductPrice: String!
+    var selectedProductDescription:String!
+    
+    var counter = 0
+    
     let manager = ProductDataSource()
     var myproducts = []
 
@@ -72,13 +79,49 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let tempProduct = self.myproducts[indexPath.row] as? FeaturedProduct
         let cell = tableView.dequeueReusableCellWithIdentifier("featuredProductCell") as? ProductsTableViewCell
         cell!.productName?.text = tempProduct?.name
-        cell!.productPrice. = String(tempProduct!.price)
+        cell!.productPrice.text = String(tempProduct!.price)
         cell!.productImage.image = tempProduct?.productImage
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell!
         
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        //tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ProductsTableViewCell
+        
+        selectedProductImage = currentCell.productImage.image
+        selectedProductName = currentCell.productName.text
+        selectedProductPrice = currentCell.productPrice.text
+        selectedProductDescription = currentCell.productName.text
+       
+        performSegueWithIdentifier("featured", sender: self)
+        
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "featured"
+        {
+          
+             print("this is our product " , myproducts)
+            
+             if let destinationVC = segue.destinationViewController as? DetailViewController
+             {
+                destinationVC.name =  selectedProductName
+                destinationVC.image = selectedProductImage
+                destinationVC.price = selectedProductPrice
+                destinationVC.desc = selectedProductDescription
+            }
+            
+        }
+    }
+    
     
     func createClasses()
     {

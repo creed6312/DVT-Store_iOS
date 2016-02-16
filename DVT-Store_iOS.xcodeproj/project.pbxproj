@@ -20,6 +20,7 @@
 		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
 		ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */; };
 		ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */; };
+		EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3870C1C7203DE00193742 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
 		ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
+		EDC3870C1C7203DE00193742 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */,
 				ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */,
 				ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */,
+				EDC3870C1C7203DE00193742 /* DetailViewController.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
+				EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
