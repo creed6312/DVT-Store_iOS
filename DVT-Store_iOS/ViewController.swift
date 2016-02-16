@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let tempProduct = self.myproducts[indexPath.row] as? FeaturedProduct
         let cell = tableView.dequeueReusableCellWithIdentifier("featuredProductCell") as? ProductsTableViewCell
         cell!.productName?.text = tempProduct?.name
-        cell!.productPrice.text = String(tempProduct!.price)
+        cell!.productPrice.text = "R " + String(tempProduct!.price)
         cell!.productImage.image = tempProduct?.productImage
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
