@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         cell!.productPrice.text = "R " + String(tempProduct!.price)
         cell!.productImage.image = tempProduct?.productImage
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        
+        //123
         return cell!
         
     }
