@@ -16,11 +16,15 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     @IBOutlet weak var featuredProductPrice: UILabel!
     @IBOutlet weak var featuredProductDescription: UITextView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var productTableView: UITableView!
     
     //Mark: TableView items
     
-    
+    var selectedProductImage:UIImage!
+    var selectedProductName:String!
+    var selectedProductPrice: String!
+    var selectedProductDescription:String!
     
     @IBOutlet weak var viewForFeaturedItem: UIView!
     
@@ -36,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     var progressView: UIProgressView?
     var progressLabel: UILabel?
-
+    
     
     let ApiKey:String = "0ac44d4d-eb43-3e0e-fb86-ba427bee5eb4"
     
@@ -53,6 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
+        spinner?.startAnimating()
         jsonParser("GetFeatured",Type: "featured")
         jsonParser("GetAllProducts",Type: "not")
         //loopThroughObject(products, counter: tempCounter)
@@ -85,7 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         cell!.productPrice.text = "R" + String(tempProduct.price)
         cell!.productImage.image = tempProduct.productImage
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
-        //123
+        
         return cell!
         
     }
@@ -97,11 +102,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ProductsTableViewCell
         
+        
         selectedProductImage = currentCell.productImage.image
         selectedProductName = currentCell.productName.text
-        selectedProductPrice = currentCell.productPrice.text
-        selectedProductDescription = currentCell.productName.text
-       
+        selectedProductPrice = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
+        selectedProductDescription = myproducts[indexPath.row].description
+        
         performSegueWithIdentifier("featured", sender: self)
         
         
@@ -111,11 +117,11 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "featured"
         {
-          
-             print("this is our product " , myproducts)
             
-             if let destinationVC = segue.destinationViewController as? DetailViewController
-             {
+            print("this is our product " , myproducts)
+            
+            if let destinationVC = segue.destinationViewController as? DetailViewController
+            {
                 destinationVC.name =  selectedProductName
                 destinationVC.image = selectedProductImage
                 destinationVC.price = selectedProductPrice
@@ -145,7 +151,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         featuredProductName.text = f.name
         featuredProductPrice.text = String (f.price)
-        featuredProductDescription.text = f.description
+        //featuredProductDescription.text = f.description
         featuredItem.image = f.productImage
         
     }
@@ -190,12 +196,21 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                         
                         count++
                         print(imageLink)
-                    }
-                    
-                    dispatch_async(dispatch_get_main_queue())
-                        {
-                            self.productTableView.reloadData()
-                            self.loadProductDataInUIComponents(self.products[0])
+                        
+                        dispatch_async(dispatch_get_main_queue())
+                            {
+                                self.productTableView.reloadData()
+                                if(self.products.count>0){
+                                    self.loadProductDataInUIComponents(self.products[0])
+                                }
+                                if (self.products.count == jsonDictionary.count)
+                                {
+                                    self.spinner?.hidesWhenStopped = true
+                                    self.spinner?.stopAnimating()
+                                }
+                                
+                        }
+                        
                     }
                 }
                 catch {

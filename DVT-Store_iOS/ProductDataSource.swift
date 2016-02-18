@@ -18,7 +18,6 @@ class ProductDataSource{
     let photo3 = UIImage(named: "iphone1.jpg")
     let photo4 = UIImage(named: "iphone2.jpg")
     
-    var parser = JsonApiCalls()
 
     
     init()
