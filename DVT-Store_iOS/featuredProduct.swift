@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class FeaturedProduct{
-    var ID: String
+    var ID: Int
     var name:String
     var price: Double
     var description: String
@@ -18,7 +18,7 @@ public class FeaturedProduct{
     var imageURL: String
     
     
-    public init(name:String,price: Double,description: String,productImage:UIImage,url:String, id: String)
+    public init(name:String,price: Double,description: String,productImage:UIImage,url:String, id: Int)
     {
         self.description = description
         self.name = name
@@ -28,12 +28,5 @@ public class FeaturedProduct{
         self.imageURL = url
        
     }
-    
-    
-    
-    
-    
-  
-    
     
 }

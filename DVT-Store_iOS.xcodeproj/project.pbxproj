@@ -18,6 +18,8 @@
 		ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BC1C6DD94400953E9C /* iphone1.jpg */; };
 		ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BD1C6DD94400953E9C /* mac2.jpg */; };
 		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
+		ED4AAF361C745C6200B9C105 /* JSonAPICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AAF351C745C6200B9C105 /* JSonAPICalls.swift */; };
+		ED78292A1C7355A20017DE80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7829291C7355A20017DE80 /* Default-568h@2x.png */; };
 		ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */; };
 		ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		ED3F22BC1C6DD94400953E9C /* iphone1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone1.jpg; sourceTree = "<group>"; };
 		ED3F22BD1C6DD94400953E9C /* mac2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac2.jpg; sourceTree = "<group>"; };
 		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
+		ED4AAF351C745C6200B9C105 /* JSonAPICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSonAPICalls.swift; sourceTree = "<group>"; };
+		ED7829291C7355A20017DE80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +58,7 @@
 		ED3F22971C6DC19D00953E9C = {
 			isa = PBXGroup;
 			children = (
+				ED7829291C7355A20017DE80 /* Default-568h@2x.png */,
 				ED3F22A21C6DC19D00953E9C /* DVT-Store_iOS */,
 				ED3F22A11C6DC19D00953E9C /* Products */,
 			);
@@ -84,6 +89,7 @@
 				ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */,
 				ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */,
 				ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */,
+				ED4AAF351C745C6200B9C105 /* JSonAPICalls.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 				ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */,
 				ED3F22AE1C6DC19D00953E9C /* Assets.xcassets in Resources */,
 				ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */,
+				ED78292A1C7355A20017DE80 /* Default-568h@2x.png in Resources */,
 				ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */,
 				ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */,
 			);
@@ -167,6 +174,7 @@
 				ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */,
 				ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */,
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
+				ED4AAF361C745C6200B9C105 /* JSonAPICalls.swift in Sources */,
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
 			);
