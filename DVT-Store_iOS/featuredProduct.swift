@@ -15,17 +15,15 @@ public class FeaturedProduct{
     var price: Double
     var description: String
     var productImage: UIImage
-    var imageURL: String
     
     
-    public init(name:String,price: Double,description: String,productImage:UIImage,url:String, id: Int)
+    public init(name:String,price: Double,description: String,productImage:UIImage, id: Int)
     {
         self.description = description
         self.name = name
         self.price = price
         self.productImage = productImage
         self.ID = id
-        self.imageURL = url
        
     }
     

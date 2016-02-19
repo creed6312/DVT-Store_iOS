@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //Mark: Featured Products view properties
     
+    @IBOutlet weak var indicatorView: UIView!
+    @IBOutlet weak var pageIndicator: UIPageControl!
     @IBOutlet weak var featuredItem: UIImageView!
     @IBOutlet weak var featuredProductName: UILabel!
     @IBOutlet weak var featuredProductPrice: UILabel!
@@ -18,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var productTableView: UITableView!
+    @IBOutlet weak var featuredProductView: UIView!
     
     //Mark: TableView items
     
@@ -26,62 +29,103 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var selectedProductPrice: String!
     var selectedProductDescription:String!
     
-    @IBOutlet weak var viewForFeaturedItem: UIView!
+    //Mark: featuredProducts items
+    
+    var selectedProductImage1:UIImage!
+    var selectedProductName1:String!
+    var selectedProductPrice1: String!
+    var selectedProductDescription1:String!
     
     //Mark: properties
     
     var products = [FeaturedProduct]()
-    let photo1 = UIImage(named: "mac1.jpg")
-    let photo2 = UIImage(named: "mac2.jpg")
-    let photo3 = UIImage(named: "iphone1.jpg")
-    let photo4 = UIImage(named: "iphone2.jpg")
-    var imageTemp = UIImage(named: "mac1.jpg")
     var tempCounter: Int = 0
+    var timerWait = false
     
     var progressView: UIProgressView?
     var progressLabel: UILabel?
     
+    var myTimer = NSTimer.self
     
     let ApiKey:String = "0ac44d4d-eb43-3e0e-fb86-ba427bee5eb4"
     
-    
+    var featuredProductsCount : Int = -1
+    var productsCount : Int = -1
     let manager = ProductDataSource()
     var myproducts = [FeaturedProduct]()
+
+    
+    func addDots(){
+        
+        indicatorView.layer.sublayers = nil
+        
+        for index in 0...featuredProductsCount-1
+        {
+            let a = CGFloat((featuredProductsCount * (-12)) + (index * 20))
+            let circle = UIBezierPath(ovalInRect: CGRectMake(a, 10, 8, 8))
+            
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = circle.CGPath
+            
+            shapeLayer.strokeColor = UIColor.blueColor().CGColor
+            if (tempCounter == index )
+            {
+                shapeLayer.fillColor = UIColor.blueColor().CGColor
+            }
+            else
+            {
+                shapeLayer.fillColor = UIColor.whiteColor().CGColor
+            }
+            
+            indicatorView.layer.addSublayer(shapeLayer)
+        }
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //manager.getProducts(&self.myproducts)
+        //addDots()
         
+        //manager.getProducts(&self.myproducts)
         
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
         spinner?.startAnimating()
-        jsonParser("GetFeatured",Type: "featured")
         jsonParser("GetAllProducts",Type: "not")
+        jsonParser("GetFeatured",Type: "featured")
+        
         //loopThroughObject(products, counter: tempCounter)
         // Do any additional setup after loading the view, typically from a nib.
         
         
         //showing product details in another view controllertab
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("productDescription:"))
-        featuredItem.userInteractionEnabled = true
-        featuredItem.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("featuredClick:"))
+        featuredProductView.userInteractionEnabled = true
+        featuredProductView.addGestureRecognizer(tapGestureRecognizer)
         
+        //pageIndicator
+        
+    }
+    
+    func featuredClick(sender: UITapGestureRecognizer)
+    {
+        self.featuredProductView.alpha = 0.99
+        performSegueWithIdentifier("featured", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView,numberOfRowsInSection section:Int)-> Int
     {
         return self.myproducts.count
     }
+    
     func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
     {
         let tempProduct = self.myproducts[indexPath.row]
@@ -92,26 +136,17 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell!
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        //tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ProductsTableViewCell
-        
-        
         selectedProductImage = currentCell.productImage.image
         selectedProductName = currentCell.productName.text
         selectedProductPrice = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
         selectedProductDescription = myproducts[indexPath.row].description
         
         performSegueWithIdentifier("featured", sender: self)
-        
-        
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -127,38 +162,62 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                 destinationVC.price = selectedProductPrice
                 destinationVC.desc = selectedProductDescription
             }
-            
         }
-    }
-    
-    
-    func createClasses()
-    {
-        
-        
-        let featuredProduct = FeaturedProduct(name: "Laptop",price: 18000.00,description: "This product",productImage: imageTemp!,url: " url",id: 127)
-        let featuredProduct2 = FeaturedProduct(name: "Laptop2",price: 22000.00,description: "This product",productImage: photo2!,url: "url",id: 125)
-        let featuredProduct3 = FeaturedProduct(name: "iphone1",price: 8500.00,description: "This product",productImage: photo3!,url: "url",id: 123)
-        let featuredProduct4 = FeaturedProduct(name: "iphone2",price: 6500.00,description: "This product fghdfgsdlfjdhsflkdslkf sdlkfhkljsdhfkldshlk fsdklnvfjksdghtlskdnvlkdfsjgklsdjfl;jds;lfjk;lsdfdskl;jfosd f;kdsjflksdjfkldsj flisdjkfklsdhtkldasjflksdfjklsdjfklds",productImage: photo4!,url: "url",id: 122)
-        
-        
-        products += [featuredProduct,featuredProduct2, featuredProduct3, featuredProduct4 ]
-        
+        else if segue.identifier == "viewFeatured"
+        {
+            print("this is our product " , myproducts)
+            
+            if let destinationVC2 = segue.destinationViewController as? DetailViewController
+            {
+                destinationVC2.name =  selectedProductName1
+                destinationVC2.image = selectedProductImage1
+                destinationVC2.price = selectedProductPrice1
+                destinationVC2.desc = selectedProductDescription1
+            }
+        }
     }
     
     func loadProductDataInUIComponents(f:FeaturedProduct)
     {
+        selectedProductDescription = f.description
+        selectedProductImage = f.productImage
+        selectedProductName = f.name
+        selectedProductPrice = "R" + String(format:"%.2f", f.price)
         
-        featuredProductName.text = f.name
-        featuredProductPrice.text = String (f.price)
-        //featuredProductDescription.text = f.description
-        featuredItem.image = f.productImage
         
+        if (featuredProductView.alpha == 1.0)
+        {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {self.featuredProductView.alpha = 0.0}, completion:
+                {
+                    if $0
+                    {
+                        self.featuredProductName.text = f.name
+                        self.featuredProductPrice.text = "R" + String(format:"%.2f", f.price)
+                        self.featuredItem.image = f.productImage
+                        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {self.featuredProductView.alpha = 1.0}, completion:
+                            {
+                                if $0
+                                {
+                                    
+                                    self.addDots()
+                                    self.featuredProductView.alpha = 1.0
+                                }
+                        })
+                    }
+            })
+        }
+        else
+        {
+            self.featuredProductView.alpha = 1.0
+            self.featuredProductName.text = f.name
+            self.featuredProductPrice.text = "R" + String(format:"%.2f", f.price)
+            self.featuredItem.image = f.productImage
+        }
     }
     
     func jsonParser(Call : String, Type : String)
     {
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        let priority = DISPATCH_QUEUE_PRIORITY_HIGH
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             let urlPath = "http://dvtstorage.cloudapp.net/api/" + Call + "?ApiToken=" + self.ApiKey
             guard let endpoint = NSURL(string: urlPath) else { print("Error creating endpoint");return }
@@ -167,7 +226,16 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                 do
                 {
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
-                    var count = 0
+                    
+                    if (Type != "featured")
+                    {
+                        self.productsCount = jsonDictionary.count
+                    }
+                    else
+                    {
+                        self.featuredProductsCount = jsonDictionary.count
+                    }
+                    
                     for object in jsonDictionary as! [NSObject]
                     {
                         let id: Int = object.valueForKey("Id") as! Int
@@ -177,12 +245,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                         let imageLink: String = object.valueForKey("Url") as! String
                         let url = NSURL(string: imageLink)
                         let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-                        self.imageTemp = UIImage(data: data!)
+                        let imageTemp = UIImage(data: data!)
                         print("ID: " + String(id))
                         print("Name: " + name)
                         print("Description: " + descrip)
                         print("Price: " + String(format:"%.2f", price))
-                        let prod = FeaturedProduct(name: name,price: price,description: descrip,productImage: self.imageTemp!,url: imageLink,id: id)
+                        let prod = FeaturedProduct(name: name,price: price,description: descrip,productImage:imageTemp!,id: id)
                         
                         if (Type == "featured")
                         {
@@ -191,38 +259,54 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                         else
                         {
                             self.myproducts += [prod]
-                            
                         }
-                        
-                        count++
-                        print(imageLink)
-                        
-                        dispatch_async(dispatch_get_main_queue())
-                            {
-                                self.productTableView.reloadData()
-                                if(self.products.count>0){
-                                    self.loadProductDataInUIComponents(self.products[0])
-                                }
-                                if (self.products.count == jsonDictionary.count)
-                                {
-                                    self.spinner?.hidesWhenStopped = true
-                                    self.spinner?.stopAnimating()
-                                }
-                                
-                        }
-                        
                     }
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                        {
+                            if (self.myproducts.count == self.productsCount && self.products.count == self.featuredProductsCount)
+                            {
+                                self.addDots()
+                                self.productTableView.reloadData()
+                                self.productTableView.hidden = false
+                                self.featuredProductView.hidden = false
+                                
+                                self.loadProductDataInUIComponents(self.products[0])
+                                self.spinner?.hidesWhenStopped = true
+                                self.spinner?.stopAnimating()
+                                
+                                self.myTimer.scheduledTimerWithTimeInterval(5.0, target: self,selector: "fire:",userInfo: nil, repeats: true)
+                                
+                            }
+                    }
+                    
                 }
                 catch {
                     print(error)
                 }
                 }.resume()
-            
+        }
+    }
+    func fire(timer: NSTimer)
+    {
+        if (!timerWait)
+        {
+            tempCounter += 1
+            if (tempCounter == products.count)
+            {
+                tempCounter = 0
+            }
+            loadProductDataInUIComponents(products[tempCounter])
+        }
+        else
+        {
+            timerWait = false
         }
     }
     
     @IBAction func swipethroughFeaturedItem(sender: UISwipeGestureRecognizer) {
         
+        timerWait = true
         if(sender.direction == .Left){
             tempCounter += 1
             if (tempCounter == products.count)
@@ -242,10 +326,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
-    //    func productDescription(image: AnyObject)
-    //    {
-    //        self.performSegueWithIdentifier("GoToViewController", sender:self)
-    //    }
     
 }
 
