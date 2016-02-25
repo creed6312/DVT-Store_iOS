@@ -18,6 +18,8 @@
 		ED3F22BF1C6DD94400953E9C /* iphone1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BC1C6DD94400953E9C /* iphone1.jpg */; };
 		ED3F22C01C6DD94400953E9C /* mac2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BD1C6DD94400953E9C /* mac2.jpg */; };
 		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
+		ED4E15731C7C1D9700E028A5 /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E15721C7C1D9700E028A5 /* BasketItem.swift */; };
+		ED4E15751C7C1EED00E028A5 /* BasketUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */; };
 		ED78292A1C7355A20017DE80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7829291C7355A20017DE80 /* Default-568h@2x.png */; };
 		ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */; };
 		ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */; };
@@ -38,6 +40,8 @@
 		ED3F22BC1C6DD94400953E9C /* iphone1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone1.jpg; sourceTree = "<group>"; };
 		ED3F22BD1C6DD94400953E9C /* mac2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac2.jpg; sourceTree = "<group>"; };
 		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
+		ED4E15721C7C1D9700E028A5 /* BasketItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
+		ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketUtility.swift; sourceTree = "<group>"; };
 		ED7829291C7355A20017DE80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				ED3F22A51C6DC19D00953E9C /* ViewController.swift */,
 				ED3F22A71C6DC19D00953E9C /* Main.storyboard */,
 				ED3F22AD1C6DC19D00953E9C /* Assets.xcassets */,
+				EDC3870C1C7203DE00193742 /* DetailViewController.swift */,
 				ED3F22B81C6DD24600953E9C /* Mac1.jpg */,
 				ED3F22BC1C6DD94400953E9C /* iphone1.jpg */,
 				ED3F22BD1C6DD94400953E9C /* mac2.jpg */,
@@ -89,7 +94,8 @@
 				ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */,
 				ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */,
 				ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */,
-				EDC3870C1C7203DE00193742 /* DetailViewController.swift */,
+				ED4E15721C7C1D9700E028A5 /* BasketItem.swift */,
+				ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 				ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */,
 				ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */,
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
+				ED4E15731C7C1D9700E028A5 /* BasketItem.swift in Sources */,
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
+				ED4E15751C7C1EED00E028A5 /* BasketUtility.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
 				EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */,
 			);

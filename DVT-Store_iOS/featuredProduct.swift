@@ -26,5 +26,4 @@ public class FeaturedProduct{
         self.ID = id
        
     }
-    
 }

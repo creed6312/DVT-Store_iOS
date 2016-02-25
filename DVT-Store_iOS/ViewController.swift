@@ -29,12 +29,10 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var selectedProductPrice: String!
     var selectedProductDescription:String!
     
+    var selectedProductID:Int!
     //Mark: featuredProducts items
     
-    var selectedProductImage1:UIImage!
-    var selectedProductName1:String!
-    var selectedProductPrice1: String!
-    var selectedProductDescription1:String!
+    
     
     //Mark: properties
     
@@ -53,7 +51,38 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var productsCount : Int = -1
     let manager = ProductDataSource()
     var myproducts = [FeaturedProduct]()
-
+    
+    func loadBasketData(){
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let basketArr : AnyObject? = defaults.objectForKey("BasketID")
+        {
+            if (basketArr?.count > 0 )
+            {
+                var readArr: [NSInteger] = basketArr as! [NSInteger]
+                for i in 0...readArr.count-1
+                {
+                    let g = BasketItem()
+                    BasketUtility.basketList.append(g)
+                    BasketUtility.basketList[i].BasketId = readArr[i]
+                    print(BasketUtility.basketList[i].BasketId)
+                }
+            }
+        }
+        if let basketCount : AnyObject? = defaults.objectForKey("BasketCount")
+        {
+            if (basketCount?.count > 0)
+            {
+                var readArr: [NSInteger] = basketCount as! [NSInteger]
+                for i in 0...readArr.count-1
+                {
+                    BasketUtility.basketList[i].BasketCount = readArr[i]
+                    print(BasketUtility.basketList[i].BasketCount)
+                }
+            }
+        }
+        
+    }
     
     func addDots(){
         
@@ -76,19 +105,18 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             {
                 shapeLayer.fillColor = UIColor.whiteColor().CGColor
             }
-            
             indicatorView.layer.addSublayer(shapeLayer)
         }
         
         
     }
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //addDots()
-        
-        //manager.getProducts(&self.myproducts)
         
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
@@ -96,19 +124,17 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         spinner?.startAnimating()
         jsonParser("GetAllProducts",Type: "not")
         jsonParser("GetFeatured",Type: "featured")
-        
-        //loopThroughObject(products, counter: tempCounter)
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        //showing product details in another view controllertab
-        
+        loadBasketData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("featuredClick:"))
         featuredProductView.userInteractionEnabled = true
         featuredProductView.addGestureRecognizer(tapGestureRecognizer)
         
-        //pageIndicator
-        
+    }
+    
+    func loadList(notification: NSNotification){
+        self.featuredProductView.alpha = 0.99
+        loadProductDataInUIComponents(products[tempCounter])
     }
     
     func featuredClick(sender: UITapGestureRecognizer)
@@ -131,7 +157,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let tempProduct = self.myproducts[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("featuredProductCell") as? ProductsTableViewCell
         cell!.productName?.text = tempProduct.name
-        cell!.productPrice.text = "R" + String(tempProduct.price)
+        cell!.productPrice.text = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
         cell!.productImage.image = tempProduct.productImage
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
@@ -145,7 +171,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         selectedProductName = currentCell.productName.text
         selectedProductPrice = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
         selectedProductDescription = myproducts[indexPath.row].description
-        
+        selectedProductID =  myproducts[indexPath.row].ID
         performSegueWithIdentifier("featured", sender: self)
     }
     
@@ -161,6 +187,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                 destinationVC.image = selectedProductImage
                 destinationVC.price = selectedProductPrice
                 destinationVC.desc = selectedProductDescription
+                destinationVC.id = selectedProductID
             }
         }
         else if segue.identifier == "viewFeatured"
@@ -169,13 +196,16 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             
             if let destinationVC2 = segue.destinationViewController as? DetailViewController
             {
-                destinationVC2.name =  selectedProductName1
-                destinationVC2.image = selectedProductImage1
-                destinationVC2.price = selectedProductPrice1
-                destinationVC2.desc = selectedProductDescription1
+                destinationVC2.name =  selectedProductName
+                destinationVC2.image = selectedProductImage
+                destinationVC2.price = selectedProductPrice
+                destinationVC2.desc = selectedProductDescription
+                destinationVC2.id = selectedProductID
             }
         }
     }
+    
+    
     
     func loadProductDataInUIComponents(f:FeaturedProduct)
     {
@@ -183,6 +213,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         selectedProductImage = f.productImage
         selectedProductName = f.name
         selectedProductPrice = "R" + String(format:"%.2f", f.price)
+        selectedProductID = f.ID
         
         
         if (featuredProductView.alpha == 1.0)
@@ -208,6 +239,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
         else
         {
+            self.addDots()
             self.featuredProductView.alpha = 1.0
             self.featuredProductName.text = f.name
             self.featuredProductPrice.text = "R" + String(format:"%.2f", f.price)
@@ -275,8 +307,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                                 self.spinner?.hidesWhenStopped = true
                                 self.spinner?.stopAnimating()
                                 
-                                self.myTimer.scheduledTimerWithTimeInterval(5.0, target: self,selector: "fire:",userInfo: nil, repeats: true)
-                                
+                                self.myTimer.scheduledTimerWithTimeInterval(3.0, target: self,selector: "fire:",userInfo: nil, repeats: true)
                             }
                     }
                     
