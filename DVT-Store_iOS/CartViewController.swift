@@ -1,29 +1,22 @@
 //
-//  ViewController.swift
+//  CartViewController.swift
 //  DVT-Store_iOS
 //
-//  Created by DVT on 2016/02/12.
+//  Created by DVT on 3/6/16.
 //  Copyright © 2016 DVT. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    //Mark: Featured Products view properties
+class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+
     
-    @IBOutlet weak var indicatorView: UIView!
-    @IBOutlet weak var pageIndicator: UIPageControl!
-    @IBOutlet weak var featuredItem: UIImageView!
-    @IBOutlet weak var featuredProductName: UILabel!
-    @IBOutlet weak var featuredProductPrice: UILabel!
-    @IBOutlet weak var featuredProductDescription: UITextView!
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var productTableView: UITableView!
-    @IBOutlet weak var featuredProductView: UIView!
+ 
+    @IBOutlet weak var cartTableView: UITableView!
     
     //Mark: TableView items
     
+    @IBOutlet weak var totalLable: UILabel!
     var selectedProductImage:UIImage!
     var selectedProductName:String!
     var selectedProductPrice: String!
@@ -32,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var selectedProductID:Int!
     //Mark: featuredProducts items
     
+    var total: Double = 0.00;
     
     
     //Mark: properties
@@ -54,71 +48,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     
-    func loadBasketData(){
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let basketArr : AnyObject? = defaults.objectForKey("BasketID")
-        {
-            
-            if (basketArr?.count > 0 )
-            {
-                var readArr: [NSInteger] = basketArr as! [NSInteger]
-                for i in 0...readArr.count-1
-                {
-                    
-                    let g = BasketItem()
-                    BasketUtility.basketList.append(g)
-                    BasketUtility.basketList[i].BasketId = readArr[i]
-                    print(BasketUtility.basketList[i].BasketId)
-                    
-                    
-                }
-            }
-        }
-        if let basketCount : AnyObject? = defaults.objectForKey("BasketCount")
-        {
-            if (basketCount?.count > 0)
-            {
-                var readArr: [NSInteger] = basketCount as! [NSInteger]
-                for i in 0...readArr.count-1
-                {
-                    
-                    BasketUtility.basketList[i].BasketCount = readArr[i]
-                    print(BasketUtility.basketList[i].BasketCount)
-                    
-                }
-            }
-        }
-        
-    }
-    
-    func addDots(){
-        
-        indicatorView.layer.sublayers = nil
-        
-        for index in 0...featuredProductsCount-1
-        {
-            let a = CGFloat((featuredProductsCount * (-12)) + (index * 20))
-            let circle = UIBezierPath(ovalInRect: CGRectMake(a, 10, 8, 8))
-            
-            let shapeLayer = CAShapeLayer()
-            shapeLayer.path = circle.CGPath
-            
-            shapeLayer.strokeColor = UIColor.blueColor().CGColor
-            if (tempCounter == index )
-            {
-                shapeLayer.fillColor = UIColor.blueColor().CGColor
-            }
-            else
-            {
-                shapeLayer.fillColor = UIColor.whiteColor().CGColor
-            }
-            indicatorView.layer.addSublayer(shapeLayer)
-        }
-        
-        
-    }
-    
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -126,29 +55,37 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addToolBar(0)
-        self.productTableView.delegate = self
-        self.productTableView.dataSource = self
+        self.addToolBar(2)
+        self.cartTableView.delegate = self
+        self.cartTableView.dataSource = self
         
-        spinner?.startAnimating()
-        jsonParser("GetAllProducts",Type: "not")
-        jsonParser("GetFeatured",Type: "featured")
-       //loadBasketData()
+        //spinner?.startAnimating()
+        jsonParser("GetCart")
+        //jsonParser("GetFeatured",Type: "featured")
+       // loadBasketData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("featuredClick:"))
-        featuredProductView.userInteractionEnabled = true
-        featuredProductView.addGestureRecognizer(tapGestureRecognizer)
+       // let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("featuredClick:"))
+        //featuredProductView.userInteractionEnabled = true
+        //featuredProductView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let emptySrting:String = ""
+        if(!tempString.isEmpty){
+                tempString = emptySrting
+        
+        }
+      
+      //  gettotal()
         
     }
     
     func loadList(notification: NSNotification){
-        self.featuredProductView.alpha = 0.99
-        loadProductDataInUIComponents(products[tempCounter])
+       // self.featuredProductView.alpha = 0.99
+       // loadProductDataInUIComponents(products[tempCounter])
     }
     
     func featuredClick(sender: UITapGestureRecognizer)
     {
-        self.featuredProductView.alpha = 0.99
+        //self.featuredProductView.alpha = 0.99
         performSegueWithIdentifier("featured", sender: self)
     }
     
@@ -160,19 +97,35 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     {
         return self.myproducts.count
     }
+    var tempTotal : [Double] = []
     
     func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
     {
         let tempProduct = self.myproducts[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("featuredProductCell") as? ProductsTableViewCell
-        cell!.productName?.text = tempProduct.name
-        cell!.productPrice.text = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
-        cell!.productImage.image = tempProduct.productImage
+        let cell = tableView.dequeueReusableCellWithIdentifier("cartViewCell") as? cartViewCell
+        cell!.cartTitle?.text = tempProduct.name
+        cell!.cartPrice.text = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
+        cell!.cartImage.image = tempProduct.productImage
+        cell!.cartQuantity.text = String(BasketUtility.basketList[indexPath.row].BasketCount)
+        tempTotal.append(tempPrice[indexPath.row] * Double(BasketUtility.basketList[indexPath.row].BasketCount))
+        
+       // print(tempTotal[0])
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell!
     }
     
+  
+    var totalas: Double=0.00
+    func gettotal()
+    {
+        for i in 0...tempTotal.count-1
+        {
+            totalas += tempTotal[i]
+        }
+        print(totalas)
+        
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ProductsTableViewCell
@@ -214,53 +167,46 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
+    var tempPrice : [Double] = []
     
-    
-    func loadProductDataInUIComponents(f:FeaturedProduct)
+     var tempString :String = ""
+    func jsonParser(Call : String)
     {
-        selectedProductDescription = f.description
-        selectedProductImage = f.productImage
-        selectedProductName = f.name
-        selectedProductPrice = "R" + String(format:"%.2f", f.price)
-        selectedProductID = f.ID
         
-        
-        if (featuredProductView.alpha == 1.0)
+     
+       
+        print(String(BasketUtility.basketList.count) + " basket")
+        for i in 0...BasketUtility.basketList.count - 1
         {
-            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {self.featuredProductView.alpha = 0.0}, completion:
+            
+           
+                
+            if(i < BasketUtility.basketList.count - 1)
+            {
+                if(BasketUtility.basketList[i].BasketId != 0){
+                    tempString += String(BasketUtility.basketList[i].BasketId) + ","
+                }
+            }else
+            {
+               
+                if(BasketUtility.basketList[i].BasketId != 0){
+                    tempString += String(BasketUtility.basketList[i].BasketId)
+                }
+                if(tempString.characters.last! == ",")
                 {
-                    if $0
-                    {
-                        self.featuredProductName.text = f.name
-                        self.featuredProductPrice.text = "R" + String(format:"%.2f", f.price)
-                        self.featuredItem.image = f.productImage
-                        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {self.featuredProductView.alpha = 1.0}, completion:
-                            {
-                                if $0
-                                {
-                                    
-                                    self.addDots()
-                                    self.featuredProductView.alpha = 1.0
-                                }
-                        })
-                    }
-            })
+                    	tempString = tempString.substringToIndex(tempString.endIndex.predecessor())
+                
+                }
+            } 
+            
+            print( "asasd" +  tempString)
+
         }
-        else
-        {
-            self.addDots()
-            self.featuredProductView.alpha = 1.0
-            self.featuredProductName.text = f.name
-            self.featuredProductPrice.text = "R" + String(format:"%.2f", f.price)
-            self.featuredItem.image = f.productImage
-        }
-    }
-    
-    func jsonParser(Call : String, Type : String)
-    {
+        
+                
         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let urlPath = "http://192.168.2.46/api/" + Call + "?ApiToken=" + self.ApiKey
+            let urlPath = "http://192.168.2.46/api/" + Call + "?Ids=" + self.tempString + "&ApiToken=" + self.ApiKey
             guard let endpoint = NSURL(string: urlPath) else { print("Error creating endpoint");return }
             let request = NSMutableURLRequest(URL:endpoint)
             NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
@@ -268,14 +214,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                 {
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     
-                    if (Type != "featured")
-                    {
+                    
+                  
                         self.productsCount = jsonDictionary.count
-                    }
-                    else
-                    {
+                  
                         self.featuredProductsCount = jsonDictionary.count
-                    }
+                    
                     
                     for object in jsonDictionary as! [NSObject]
                     {
@@ -291,30 +235,28 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                         print("Name: " + name)
                         print("Description: " + descrip)
                         print("Price: " + String(format:"%.2f", price))
+                        self.tempPrice.append(price)
                         let prod = FeaturedProduct(name: name,price: price,description: descrip,productImage:imageTemp!,id: id)
                         
-                        if (Type == "featured")
-                        {
+                      
                             self.products += [prod]
-                        }
-                        else
-                        {
+                        
                             self.myproducts += [prod]
-                        }
+                        
+                        
+                        
+                       
+                        
                     }
                     
                     dispatch_async(dispatch_get_main_queue())
                         {
                             if (self.myproducts.count == self.productsCount && self.products.count == self.featuredProductsCount)
                             {
-                                self.addDots()
-                                self.productTableView.reloadData()
-                                self.productTableView.hidden = false
-                                self.featuredProductView.hidden = false
                                 
-                                self.loadProductDataInUIComponents(self.products[0])
-                                self.spinner?.hidesWhenStopped = true
-                                self.spinner?.stopAnimating()
+                                self.cartTableView.reloadData()
+                                self.cartTableView.hidden = false
+                               
                                 
                                 self.myTimer.scheduledTimerWithTimeInterval(3.0, target: self,selector: "fire:",userInfo: nil, repeats: true)
                             }
@@ -325,6 +267,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
                     print(error)
                 }
                 }.resume()
+            
         }
     }
     func fire(timer: NSTimer)
@@ -336,7 +279,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             {
                 tempCounter = 0
             }
-            loadProductDataInUIComponents(products[tempCounter])
+            //loadProductDataInUIComponents(products[tempCounter])
         }
         else
         {
@@ -353,7 +296,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             {
                 tempCounter = 0
             }
-            loadProductDataInUIComponents(products[tempCounter])
+           // loadProductDataInUIComponents(products[tempCounter])
         }
             
         else if(sender.direction == .Right){
@@ -362,7 +305,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             {
                 tempCounter = products.count - 1
             }
-            loadProductDataInUIComponents(products[tempCounter])
+            //loadProductDataInUIComponents(products[tempCounter])
         }
     }
     
@@ -431,7 +374,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("MainView") as! ViewController
         self.presentViewController(nextViewController, animated:true, completion:nil)
-
+        
         print("To home pressed")
     }
     
@@ -440,22 +383,17 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     func toCartPreassed(){
-        if(BasketUtility.basketList.count > 0){
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("cartView") as! CartViewController
         self.presentViewController(nextViewController, animated:true, completion:nil)
-        }else{
+        
         print("To cart pressed")
-        }
     }
     
     func toMapsPreassed(){
         print("To map pressed")
     }
-    
 
-    
-    
 }
-

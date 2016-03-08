@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         itemCountStepper.hidden = true
         cartItemCount.hidden = true
         
@@ -191,6 +192,10 @@ class DetailViewController: UIViewController {
         }
         }
     }
+    
+    
+    
+    
     
 }
 
