@@ -68,13 +68,15 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         //featuredProductView.userInteractionEnabled = true
         //featuredProductView.addGestureRecognizer(tapGestureRecognizer)
         
+     
+        
         let emptySrting:String = ""
         if(!tempString.isEmpty){
                 tempString = emptySrting
         
         }
       
-      //  gettotal()
+       
         
     }
     
@@ -99,6 +101,8 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     }
     var tempTotal : [Double] = []
     
+    var totalFianl: Double = 0.00
+    
     func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath)->UITableViewCell
     {
         let tempProduct = self.myproducts[indexPath.row]
@@ -107,10 +111,29 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         cell!.cartPrice.text = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
         cell!.cartImage.image = tempProduct.productImage
         cell!.cartQuantity.text = String(BasketUtility.basketList[indexPath.row].BasketCount)
-        tempTotal.append(tempPrice[indexPath.row] * Double(BasketUtility.basketList[indexPath.row].BasketCount))
         
-       // print(tempTotal[0])
+       
+        if(indexPath.row > 0)
+        {
+            tempTotal.append((tempPrice[indexPath.row] * Double(BasketUtility.basketList[indexPath.row].BasketCount)) +
+            tempTotal[indexPath.row - 1])
+            
+        }else
+        {
+            
+            tempTotal.append(tempPrice[indexPath.row] * Double(BasketUtility.basketList[indexPath.row].BasketCount))
+            
+        }
+        
+       
+        //tempTotal.append(tempDouble)
+       
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        
+         print("* " + String(tempTotal[indexPath.row]))
+        totalLable.text = "Total: " +  	String(format: "%.2f", tempTotal[indexPath.row])
+        
+        
         
         return cell!
     }
@@ -119,11 +142,9 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     var totalas: Double=0.00
     func gettotal()
     {
-        for i in 0...tempTotal.count-1
-        {
-            totalas += tempTotal[i]
-        }
-        print(totalas)
+       
+       
+        print("**value as" + String(tempTotal.count))
         
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -199,7 +220,7 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                 }
             } 
             
-            print( "asasd" +  tempString)
+           // print( "asasd" +  tempString)
 
         }
         
@@ -244,9 +265,7 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                             self.myproducts += [prod]
                         
                         
-                        
-                       
-                        
+                      
                     }
                     
                     dispatch_async(dispatch_get_main_queue())
@@ -259,6 +278,8 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                                
                                 
                                 self.myTimer.scheduledTimerWithTimeInterval(3.0, target: self,selector: "fire:",userInfo: nil, repeats: true)
+                                
+                                
                             }
                     }
                     
@@ -269,6 +290,8 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                 }.resume()
             
         }
+        
+        
     }
     func fire(timer: NSTimer)
     {
