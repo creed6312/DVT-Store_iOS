@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0AD80E1C91A49800F2B04A /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0AD80D1C91A49800F2B04A /* check.png */; };
 		ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */; };
 		ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A51C6DC19D00953E9C /* ViewController.swift */; };
 		ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22A71C6DC19D00953E9C /* Main.storyboard */; };
@@ -29,10 +30,12 @@
 		ED95AFE31C8C85EC00BDEC08 /* order.png in Resources */ = {isa = PBXBuildFile; fileRef = ED95AFDF1C8C85EC00BDEC08 /* order.png */; };
 		ED95AFE51C8C86A600BDEC08 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95AFE41C8C86A600BDEC08 /* CartViewController.swift */; };
 		ED95AFE71C8CA03E00BDEC08 /* cartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */; };
+		EDAF128F1C9197B00017D58B /* CheckoutUIControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */; };
 		EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3870C1C7203DE00193742 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED0AD80D1C91A49800F2B04A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DVT-Store_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3F22A51C6DC19D00953E9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		ED95AFDF1C8C85EC00BDEC08 /* order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order.png; sourceTree = "<group>"; };
 		ED95AFE41C8C86A600BDEC08 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cartViewCell.swift; sourceTree = "<group>"; };
+		EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutUIControllers.swift; sourceTree = "<group>"; };
 		EDC3870C1C7203DE00193742 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 				ED95AFDC1C8C85EC00BDEC08 /* cart.png */,
 				ED95AFDD1C8C85EC00BDEC08 /* house.png */,
 				ED95AFDE1C8C85EC00BDEC08 /* map.png */,
+				ED0AD80D1C91A49800F2B04A /* check.png */,
 				ED95AFDF1C8C85EC00BDEC08 /* order.png */,
 				ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */,
 				ED3F22A51C6DC19D00953E9C /* ViewController.swift */,
@@ -114,6 +119,7 @@
 				ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */,
 				ED95AFE41C8C86A600BDEC08 /* CartViewController.swift */,
 				ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */,
+				EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3F22B11C6DC19D00953E9C /* LaunchScreen.storyboard in Resources */,
+				ED0AD80E1C91A49800F2B04A /* check.png in Resources */,
 				ED3F22B91C6DD24600953E9C /* Mac1.jpg in Resources */,
 				ED95AFE11C8C85EC00BDEC08 /* house.png in Resources */,
 				ED95AFE01C8C85EC00BDEC08 /* cart.png in Resources */,
@@ -208,6 +215,7 @@
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
 				ED4E15751C7C1EED00E028A5 /* BasketUtility.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
+				EDAF128F1C9197B00017D58B /* CheckoutUIControllers.swift in Sources */,
 				ED95AFE71C8CA03E00BDEC08 /* cartViewCell.swift in Sources */,
 				EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */,
 			);

@@ -51,7 +51,42 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     override func shouldAutorotate() -> Bool {
         return false
     }
-    
+    func loadBasketData(){
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let basketArr : AnyObject? = defaults.objectForKey("BasketID")
+        {
+            
+            if (basketArr?.count > 0 )
+            {
+                var readArr: [NSInteger] = basketArr as! [NSInteger]
+                for i in 0...readArr.count-1
+                {
+                    let g = BasketItem()
+                    BasketUtility.basketList.append(g)
+                    BasketUtility.basketList[i].BasketId = readArr[i]
+                    print(BasketUtility.basketList[i].BasketId)
+                    
+                    
+                }
+            }
+        }
+        if let basketCount : AnyObject? = defaults.objectForKey("BasketCount")
+        {
+            if (basketCount?.count > 0)
+            {
+                var readArr: [NSInteger] = basketCount as! [NSInteger]
+                for i in 0...readArr.count-1
+                {
+                    
+                    BasketUtility.basketList[i].BasketCount = readArr[i]
+                    print(BasketUtility.basketList[i].BasketCount)
+                    
+                }
+            }
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,7 +97,7 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         //spinner?.startAnimating()
         jsonParser("GetCart")
         //jsonParser("GetFeatured",Type: "featured")
-       // loadBasketData()
+        //loadBasketData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
        // let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("featuredClick:"))
         //featuredProductView.userInteractionEnabled = true
@@ -111,7 +146,7 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         cell!.cartPrice.text = "R" + String(format:"%.2f", myproducts[indexPath.row].price)
         cell!.cartImage.image = tempProduct.productImage
         cell!.cartQuantity.text = String(BasketUtility.basketList[indexPath.row].BasketCount)
-        
+        cell!.id = indexPath.row
        
         if(indexPath.row > 0)
         {
@@ -125,12 +160,9 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
             
         }
         
-       
-        //tempTotal.append(tempDouble)
-       
+        
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
-         print("* " + String(tempTotal[indexPath.row]))
         totalLable.text = "Total: " +  	String(format: "%.2f", tempTotal[indexPath.row])
         
         
@@ -227,7 +259,7 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                 
         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let urlPath = "http://192.168.2.46/api/" + Call + "?Ids=" + self.tempString + "&ApiToken=" + self.ApiKey
+            let urlPath = "http://creed.ddns.net:14501/api/" + Call + "?Ids=" + self.tempString + "&ApiToken=" + self.ApiKey
             guard let endpoint = NSURL(string: urlPath) else { print("Error creating endpoint");return }
             let request = NSMutableURLRequest(URL:endpoint)
             NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
@@ -419,4 +451,18 @@ class CartViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         print("To map pressed")
     }
 
+    func toCheckoutPage(){
+    
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("checkoutView") as! CheckOutUIControllers
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
+    
+    @IBAction func toCheckout(sender: AnyObject) {
+       toCheckoutPage()
+    }
+    
+   
 }
+

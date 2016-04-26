@@ -260,7 +260,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     {
         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            let urlPath = "http://192.168.2.46/api/" + Call + "?ApiToken=" + self.ApiKey
+            let urlPath = "http://creed.ddns.net:14501/api/" + Call + "?ApiToken=" + self.ApiKey
             guard let endpoint = NSURL(string: urlPath) else { print("Error creating endpoint");return }
             let request = NSMutableURLRequest(URL:endpoint)
             NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
