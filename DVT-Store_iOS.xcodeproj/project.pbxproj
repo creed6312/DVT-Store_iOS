@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		ED0AD80E1C91A49800F2B04A /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0AD80D1C91A49800F2B04A /* check.png */; };
+		ED357C321CCF6D8D00A5F047 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED357C301CCF6D8D00A5F047 /* Interface.storyboard */; };
+		ED357C341CCF6D8D00A5F047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED357C331CCF6D8D00A5F047 /* Assets.xcassets */; };
+		ED357C3B1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED357C3A1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ED357C421CCF6D8D00A5F047 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED357C411CCF6D8D00A5F047 /* InterfaceController.swift */; };
+		ED357C441CCF6D8D00A5F047 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED357C431CCF6D8D00A5F047 /* ExtensionDelegate.swift */; };
+		ED357C461CCF6D8D00A5F047 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED357C451CCF6D8D00A5F047 /* NotificationController.swift */; };
+		ED357C481CCF6D8D00A5F047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED357C471CCF6D8D00A5F047 /* Assets.xcassets */; };
+		ED357C4C1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ED357C2E1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app */; };
+		ED357C581CCF939B00A5F047 /* StoreMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED357C571CCF939B00A5F047 /* StoreMaps.swift */; };
 		ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */; };
 		ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22A51C6DC19D00953E9C /* ViewController.swift */; };
 		ED3F22A91C6DC19D00953E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22A71C6DC19D00953E9C /* Main.storyboard */; };
@@ -32,10 +41,68 @@
 		ED95AFE71C8CA03E00BDEC08 /* cartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */; };
 		EDAF128F1C9197B00017D58B /* CheckoutUIControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */; };
 		EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3870C1C7203DE00193742 /* DetailViewController.swift */; };
+		EDF429C31CD1DE43005B4981 /* DVTStoreLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF429C21CD1DE43005B4981 /* DVTStoreLocations.swift */; };
+		EDF429C51CD1E0B7005B4981 /* dvt_small.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF429C41CD1E0B7005B4981 /* dvt_small.png */; };
+		EDF429C71CD1E3F3005B4981 /* HomePageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF429C61CD1E3F3005B4981 /* HomePageInterfaceController.swift */; };
+		EDF429C91CD1F0FE005B4981 /* StoreLocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF429C81CD1F0FE005B4981 /* StoreLocationDetails.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED357C3C1CCF6D8D00A5F047 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3F22981C6DC19D00953E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED357C391CCF6D8D00A5F047;
+			remoteInfo = "DVT_Store_Watch_App Extension";
+		};
+		ED357C4A1CCF6D8D00A5F047 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3F22981C6DC19D00953E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED357C2D1CCF6D8D00A5F047;
+			remoteInfo = DVT_Store_Watch_App;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED357C521CCF6D8D00A5F047 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED357C3B1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED357C541CCF6D8D00A5F047 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				ED357C4C1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED0AD80D1C91A49800F2B04A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		ED357C2E1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVT_Store_Watch_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED357C311CCF6D8D00A5F047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ED357C331CCF6D8D00A5F047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED357C351CCF6D8D00A5F047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED357C3A1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DVT_Store_Watch_App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED357C401CCF6D8D00A5F047 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ED357C411CCF6D8D00A5F047 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		ED357C431CCF6D8D00A5F047 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		ED357C451CCF6D8D00A5F047 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		ED357C471CCF6D8D00A5F047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED357C491CCF6D8D00A5F047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED357C571CCF939B00A5F047 /* StoreMaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMaps.swift; sourceTree = "<group>"; };
 		ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DVT-Store_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3F22A31C6DC19D00953E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3F22A51C6DC19D00953E9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,9 +129,20 @@
 		ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cartViewCell.swift; sourceTree = "<group>"; };
 		EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutUIControllers.swift; sourceTree = "<group>"; };
 		EDC3870C1C7203DE00193742 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EDF429C21CD1DE43005B4981 /* DVTStoreLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVTStoreLocations.swift; sourceTree = "<group>"; };
+		EDF429C41CD1E0B7005B4981 /* dvt_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvt_small.png; sourceTree = "<group>"; };
+		EDF429C61CD1E3F3005B4981 /* HomePageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageInterfaceController.swift; sourceTree = "<group>"; };
+		EDF429C81CD1F0FE005B4981 /* StoreLocationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreLocationDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED357C371CCF6D8D00A5F047 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED3F229D1C6DC19D00953E9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,11 +153,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED357C2F1CCF6D8D00A5F047 /* DVT_Store_Watch_App */ = {
+			isa = PBXGroup;
+			children = (
+				ED357C301CCF6D8D00A5F047 /* Interface.storyboard */,
+				ED357C331CCF6D8D00A5F047 /* Assets.xcassets */,
+				ED357C351CCF6D8D00A5F047 /* Info.plist */,
+			);
+			path = DVT_Store_Watch_App;
+			sourceTree = "<group>";
+		};
+		ED357C3E1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED357C411CCF6D8D00A5F047 /* InterfaceController.swift */,
+				ED357C431CCF6D8D00A5F047 /* ExtensionDelegate.swift */,
+				ED357C451CCF6D8D00A5F047 /* NotificationController.swift */,
+				EDF429C61CD1E3F3005B4981 /* HomePageInterfaceController.swift */,
+				ED357C471CCF6D8D00A5F047 /* Assets.xcassets */,
+				ED357C491CCF6D8D00A5F047 /* Info.plist */,
+				ED357C3F1CCF6D8D00A5F047 /* Supporting Files */,
+				EDF429C21CD1DE43005B4981 /* DVTStoreLocations.swift */,
+			);
+			path = "DVT_Store_Watch_App Extension";
+			sourceTree = "<group>";
+		};
+		ED357C3F1CCF6D8D00A5F047 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF429C41CD1E0B7005B4981 /* dvt_small.png */,
+				ED357C401CCF6D8D00A5F047 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		ED3F22971C6DC19D00953E9C = {
 			isa = PBXGroup;
 			children = (
 				ED7829291C7355A20017DE80 /* Default-568h@2x.png */,
 				ED3F22A21C6DC19D00953E9C /* DVT-Store_iOS */,
+				ED357C2F1CCF6D8D00A5F047 /* DVT_Store_Watch_App */,
+				ED357C3E1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension */,
 				ED3F22A11C6DC19D00953E9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */,
+				ED357C2E1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app */,
+				ED357C3A1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +236,8 @@
 				ED95AFE41C8C86A600BDEC08 /* CartViewController.swift */,
 				ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */,
 				EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */,
+				ED357C571CCF939B00A5F047 /* StoreMaps.swift */,
+				EDF429C81CD1F0FE005B4981 /* StoreLocationDetails.swift */,
 			);
 			path = "DVT-Store_iOS";
 			sourceTree = "<group>";
@@ -127,6 +245,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ED357C2D1CCF6D8D00A5F047 /* DVT_Store_Watch_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED357C531CCF6D8D00A5F047 /* Build configuration list for PBXNativeTarget "DVT_Store_Watch_App" */;
+			buildPhases = (
+				ED357C2C1CCF6D8D00A5F047 /* Resources */,
+				ED357C521CCF6D8D00A5F047 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED357C3D1CCF6D8D00A5F047 /* PBXTargetDependency */,
+			);
+			name = DVT_Store_Watch_App;
+			productName = DVT_Store_Watch_App;
+			productReference = ED357C2E1CCF6D8D00A5F047 /* DVT_Store_Watch_App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		ED357C391CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED357C511CCF6D8D00A5F047 /* Build configuration list for PBXNativeTarget "DVT_Store_Watch_App Extension" */;
+			buildPhases = (
+				ED357C361CCF6D8D00A5F047 /* Sources */,
+				ED357C371CCF6D8D00A5F047 /* Frameworks */,
+				ED357C381CCF6D8D00A5F047 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DVT_Store_Watch_App Extension";
+			productName = "DVT_Store_Watch_App Extension";
+			productReference = ED357C3A1CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		ED3F229F1C6DC19D00953E9C /* DVT-Store_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED3F22B51C6DC19D00953E9C /* Build configuration list for PBXNativeTarget "DVT-Store_iOS" */;
@@ -134,10 +286,12 @@
 				ED3F229C1C6DC19D00953E9C /* Sources */,
 				ED3F229D1C6DC19D00953E9C /* Frameworks */,
 				ED3F229E1C6DC19D00953E9C /* Resources */,
+				ED357C541CCF6D8D00A5F047 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED357C4B1CCF6D8D00A5F047 /* PBXTargetDependency */,
 			);
 			name = "DVT-Store_iOS";
 			productName = "DVT-Store_iOS";
@@ -150,10 +304,17 @@
 		ED3F22981C6DC19D00953E9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = DVT;
 				TargetAttributes = {
+					ED357C2D1CCF6D8D00A5F047 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = AZR8YBS46N;
+					};
+					ED357C391CCF6D8D00A5F047 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					ED3F229F1C6DC19D00953E9C = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = AZR8YBS46N;
@@ -174,11 +335,31 @@
 			projectRoot = "";
 			targets = (
 				ED3F229F1C6DC19D00953E9C /* DVT-Store_iOS */,
+				ED357C2D1CCF6D8D00A5F047 /* DVT_Store_Watch_App */,
+				ED357C391CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ED357C2C1CCF6D8D00A5F047 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED357C341CCF6D8D00A5F047 /* Assets.xcassets in Resources */,
+				ED357C321CCF6D8D00A5F047 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED357C381CCF6D8D00A5F047 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF429C51CD1E0B7005B4981 /* dvt_small.png in Resources */,
+				ED357C481CCF6D8D00A5F047 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED3F229E1C6DC19D00953E9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,14 +383,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED357C361CCF6D8D00A5F047 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED357C461CCF6D8D00A5F047 /* NotificationController.swift in Sources */,
+				EDF429C71CD1E3F3005B4981 /* HomePageInterfaceController.swift in Sources */,
+				EDF429C31CD1DE43005B4981 /* DVTStoreLocations.swift in Sources */,
+				ED357C441CCF6D8D00A5F047 /* ExtensionDelegate.swift in Sources */,
+				ED357C421CCF6D8D00A5F047 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED3F229C1C6DC19D00953E9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF429C91CD1F0FE005B4981 /* StoreLocationDetails.swift in Sources */,
 				ED3F22AC1C6DC19D00953E9C /* DVT_Store_iOS.xcdatamodeld in Sources */,
 				ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */,
 				ED95AFE51C8C86A600BDEC08 /* CartViewController.swift in Sources */,
 				ED3F22BB1C6DD2EF00953E9C /* featuredProduct.swift in Sources */,
+				ED357C581CCF939B00A5F047 /* StoreMaps.swift in Sources */,
 				ED3F22A61C6DC19D00953E9C /* ViewController.swift in Sources */,
 				ED4E15731C7C1D9700E028A5 /* BasketItem.swift in Sources */,
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
@@ -223,7 +418,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ED357C3D1CCF6D8D00A5F047 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED357C391CCF6D8D00A5F047 /* DVT_Store_Watch_App Extension */;
+			targetProxy = ED357C3C1CCF6D8D00A5F047 /* PBXContainerItemProxy */;
+		};
+		ED357C4B1CCF6D8D00A5F047 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED357C2D1CCF6D8D00A5F047 /* DVT_Store_Watch_App */;
+			targetProxy = ED357C4A1CCF6D8D00A5F047 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		ED357C301CCF6D8D00A5F047 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED357C311CCF6D8D00A5F047 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		ED3F22A71C6DC19D00953E9C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -243,6 +459,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ED357C4D1CCF6D8D00A5F047 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DVT_Store_Watch_App_Extension;
+				INFOPLIST_FILE = DVT_Store_Watch_App/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		ED357C4E1CCF6D8D00A5F047 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DVT_Store_Watch_App_Extension;
+				INFOPLIST_FILE = DVT_Store_Watch_App/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		ED357C4F1CCF6D8D00A5F047 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DVT_Store_Watch_App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		ED357C501CCF6D8D00A5F047 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DVT_Store_Watch_App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		ED3F22B31C6DC19D00953E9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,6 +642,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED357C511CCF6D8D00A5F047 /* Build configuration list for PBXNativeTarget "DVT_Store_Watch_App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED357C4F1CCF6D8D00A5F047 /* Debug */,
+				ED357C501CCF6D8D00A5F047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED357C531CCF6D8D00A5F047 /* Build configuration list for PBXNativeTarget "DVT_Store_Watch_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED357C4D1CCF6D8D00A5F047 /* Debug */,
+				ED357C4E1CCF6D8D00A5F047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED3F229B1C6DC19D00953E9C /* Build configuration list for PBXProject "DVT-Store_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

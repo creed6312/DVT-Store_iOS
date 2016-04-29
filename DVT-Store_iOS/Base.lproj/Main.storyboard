@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bMu-h7-9Xn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -437,6 +437,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWO-YZ-I1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1803" y="-665"/>
+        </scene>
+        <!--Store Maps-->
+        <scene sceneID="MPm-fR-qnk">
+            <objects>
+                <viewController id="bMu-h7-9Xn" customClass="StoreMaps" customModule="DVT_Store_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6IY-QS-JyI"/>
+                        <viewControllerLayoutGuide type="bottom" id="LdF-TY-Y90"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Plx-fe-2rh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhE-tP-bVw">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Ryj-Wy-LbW"/>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-Oo-Rpd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-6V-tLr">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.2470588235" green="0.31764705879999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="DVT Store Locator" id="uR5-V8-p9r"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FhE-tP-bVw" firstAttribute="leading" secondItem="JoF-Oo-Rpd" secondAttribute="leading" id="2pI-hC-0FR"/>
+                            <constraint firstItem="JoF-Oo-Rpd" firstAttribute="trailing" secondItem="FhE-tP-bVw" secondAttribute="trailing" id="8IR-rS-3J9"/>
+                            <constraint firstItem="JoF-Oo-Rpd" firstAttribute="top" secondItem="6FO-6V-tLr" secondAttribute="bottom" id="Mw5-nI-DHM"/>
+                            <constraint firstItem="6FO-6V-tLr" firstAttribute="top" secondItem="6IY-QS-JyI" secondAttribute="bottom" id="R98-Dn-Og4"/>
+                            <constraint firstItem="FhE-tP-bVw" firstAttribute="bottom" secondItem="LdF-TY-Y90" secondAttribute="top" id="UT0-I7-NmZ"/>
+                            <constraint firstItem="FhE-tP-bVw" firstAttribute="leading" secondItem="Plx-fe-2rh" secondAttribute="leading" id="Xkc-mu-h4n"/>
+                            <constraint firstAttribute="trailing" secondItem="FhE-tP-bVw" secondAttribute="trailing" id="a5d-DF-l13"/>
+                            <constraint firstItem="JoF-Oo-Rpd" firstAttribute="trailing" secondItem="6FO-6V-tLr" secondAttribute="trailing" id="aTE-7d-VB7"/>
+                            <constraint firstItem="FhE-tP-bVw" firstAttribute="top" secondItem="JoF-Oo-Rpd" secondAttribute="bottom" id="fxW-TG-2HN"/>
+                            <constraint firstItem="JoF-Oo-Rpd" firstAttribute="leading" secondItem="6FO-6V-tLr" secondAttribute="leading" id="iBJ-HN-FZt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="JoF-Oo-Rpd" id="eb9-tO-DXz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvD-yB-LiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-881" y="-728"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
