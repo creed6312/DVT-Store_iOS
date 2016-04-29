@@ -4,15 +4,40 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Complication - DVT-Store_watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>DVT-Store_iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DVT-Store_watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Glance - DVT-Store_watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Notification - DVT-Store_watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>ED3F229F1C6DC19D00953E9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED52BB921CCF70980034DE80</key>
 		<dict>
 			<key>primary</key>
 			<true/>

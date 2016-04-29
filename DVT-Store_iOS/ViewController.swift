@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     //Mark: featuredProducts items
     
     
-    
     //Mark: properties
     
     var products = [FeaturedProduct]()
@@ -101,6 +100,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             let a = CGFloat((featuredProductsCount * (-12)) + (index * 20))
             let circle = UIBezierPath(ovalInRect: CGRectMake(a, 10, 8, 8))
             
+            
+            
             let shapeLayer = CAShapeLayer()
             shapeLayer.path = circle.CGPath
             
@@ -126,7 +127,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addToolBar(0)
+        
         self.productTableView.delegate = self
         self.productTableView.dataSource = self
         
@@ -366,64 +367,64 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
-    func addToolBar(itemnumberIluminate : Int){
-        
-        var arrayofitems: [UIBarButtonItem] = []
-        
-        let toolBar = UIToolbar()
-        toolBar.frame = CGRectMake(0, self.view.frame.size.height - 46, self.view.frame.size.width, 46)
-        toolBar.sizeToFit()
-        toolBar.barStyle = UIBarStyle.Default
-        
-        
-        // MARK: UiComponent
-        
-        let homeItem = UIBarButtonItem(image: UIImage(named: "house.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toHomePreassed")
-        
-        let mapItem = UIBarButtonItem(image: UIImage(named: "map.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toMapsPreassed")
-        
-        let listItams = UIBarButtonItem(image: UIImage(named: "order.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toListPreassed")
-        let cartItem = UIBarButtonItem(image: UIImage(named: "cart.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toCartPreassed")
-        
-        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        
-        
-        arrayofitems.append(homeItem)
-        arrayofitems.append(listItams)
-        arrayofitems.append(cartItem)
-        arrayofitems.append(mapItem)
-        
-        
-        for index in arrayofitems
-        {
-            index.tintColor = UIColor.grayColor()
-        }
-        
-        
-        switch (itemnumberIluminate)
-        {
-        case 0:
-            arrayofitems[0].tintColor = nil
-        case 1:
-            arrayofitems[1].tintColor = nil
-        case 2:
-            arrayofitems[2].tintColor = nil
-        case 3:
-            arrayofitems[3].tintColor = nil
-        default:
-            arrayofitems[itemnumberIluminate].tintColor = UIColor.grayColor()
-            
-        }
-        
-        
-        toolBar.setItems([homeItem, space, listItams, space, cartItem, space, mapItem], animated: false)
-        
-        toolBar.backgroundColor = UIColor.blueColor()
-        
-        self.view.addSubview(toolBar)
-        
-        
-    }
+//    func addToolBar(itemnumberIluminate : Int){
+//        
+//        var arrayofitems: [UIBarButtonItem] = []
+//        
+//        let toolBar = UIToolbar()
+//        toolBar.frame = CGRectMake(0, self.view.frame.size.height - 46, self.view.frame.size.width, 46)
+//        toolBar.sizeToFit()
+//        toolBar.barStyle = UIBarStyle.Default
+//        
+//        
+//        // MARK: UiComponent
+//        
+//        let homeItem = UIBarButtonItem(image: UIImage(named: "house.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toHomePreassed")
+//        
+//        let mapItem = UIBarButtonItem(image: UIImage(named: "map.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toMapsPreassed")
+//        
+//        let listItams = UIBarButtonItem(image: UIImage(named: "order.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toListPreassed")
+//        let cartItem = UIBarButtonItem(image: UIImage(named: "cart.png"), style: UIBarButtonItemStyle.Plain, target: self, action: "toCartPreassed")
+//        
+//        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+//        
+//        
+//        arrayofitems.append(homeItem)
+//        arrayofitems.append(listItams)
+//        arrayofitems.append(cartItem)
+//        arrayofitems.append(mapItem)
+//        
+//        
+//        for index in arrayofitems
+//        {
+//            index.tintColor = UIColor.grayColor()
+//        }
+//        
+//        
+//        switch (itemnumberIluminate)
+//        {
+//        case 0:
+//            arrayofitems[0].tintColor = nil
+//        case 1:
+//            arrayofitems[1].tintColor = nil
+//        case 2:
+//            arrayofitems[2].tintColor = nil
+//        case 3:
+//            arrayofitems[3].tintColor = nil
+//        default:
+//            arrayofitems[itemnumberIluminate].tintColor = UIColor.grayColor()
+//            
+//        }
+//        
+//        
+//        toolBar.setItems([homeItem, space, listItams, space, cartItem, space, mapItem], animated: false)
+//        
+//        toolBar.backgroundColor = UIColor.blueColor()
+//        
+//        self.view.addSubview(toolBar)
+//        
+//        
+//    }
     
     
     func toHomePreassed(){

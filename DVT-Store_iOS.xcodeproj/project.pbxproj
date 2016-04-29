@@ -21,6 +21,18 @@
 		ED3F22C11C6DD94400953E9C /* iphone2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED3F22BE1C6DD94400953E9C /* iphone2.jpg */; };
 		ED4E15731C7C1D9700E028A5 /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E15721C7C1D9700E028A5 /* BasketItem.swift */; };
 		ED4E15751C7C1EED00E028A5 /* BasketUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */; };
+		ED52BB971CCF70980034DE80 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED52BB951CCF70980034DE80 /* Interface.storyboard */; };
+		ED52BB991CCF70980034DE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED52BB981CCF70980034DE80 /* Assets.xcassets */; };
+		ED52BBA01CCF70980034DE80 /* DVT-Store_watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED52BB9F1CCF70980034DE80 /* DVT-Store_watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ED52BBA71CCF70980034DE80 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52BBA61CCF70980034DE80 /* InterfaceController.swift */; };
+		ED52BBA91CCF70980034DE80 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52BBA81CCF70980034DE80 /* ExtensionDelegate.swift */; };
+		ED52BBAB1CCF70980034DE80 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52BBAA1CCF70980034DE80 /* NotificationController.swift */; };
+		ED52BBAD1CCF70980034DE80 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52BBAC1CCF70980034DE80 /* GlanceController.swift */; };
+		ED52BBAF1CCF70980034DE80 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52BBAE1CCF70980034DE80 /* ComplicationController.swift */; };
+		ED52BBB11CCF70980034DE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED52BBB01CCF70980034DE80 /* Assets.xcassets */; };
+		ED52BBB51CCF70980034DE80 /* DVT-Store_watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ED52BB931CCF70980034DE80 /* DVT-Store_watchOS.app */; };
+		ED543AB01CD1E676002A8C7F /* featuredProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F22BA1C6DD2EF00953E9C /* featuredProduct.swift */; };
+		ED543AB11CD1E689002A8C7F /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */; };
 		ED78292A1C7355A20017DE80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED7829291C7355A20017DE80 /* Default-568h@2x.png */; };
 		ED8A05AB1C71BF4A00422101 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */; };
 		ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */; };
@@ -32,7 +44,50 @@
 		ED95AFE71C8CA03E00BDEC08 /* cartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */; };
 		EDAF128F1C9197B00017D58B /* CheckoutUIControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */; };
 		EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3870C1C7203DE00193742 /* DetailViewController.swift */; };
+		EDD48CFC1CD3341D00B651F7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD48CFB1CD3341D00B651F7 /* TabBar.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED52BBA11CCF70980034DE80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3F22981C6DC19D00953E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED52BB9E1CCF70980034DE80;
+			remoteInfo = "DVT-Store_watchOS Extension";
+		};
+		ED52BBB31CCF70980034DE80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3F22981C6DC19D00953E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED52BB921CCF70980034DE80;
+			remoteInfo = "DVT-Store_watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED52BBBB1CCF70980034DE80 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED52BBA01CCF70980034DE80 /* DVT-Store_watchOS Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED52BBBD1CCF70980034DE80 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				ED52BBB51CCF70980034DE80 /* DVT-Store_watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED0AD80D1C91A49800F2B04A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
@@ -51,6 +106,19 @@
 		ED3F22BE1C6DD94400953E9C /* iphone2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone2.jpg; sourceTree = "<group>"; };
 		ED4E15721C7C1D9700E028A5 /* BasketItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
 		ED4E15741C7C1EED00E028A5 /* BasketUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketUtility.swift; sourceTree = "<group>"; };
+		ED52BB931CCF70980034DE80 /* DVT-Store_watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DVT-Store_watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED52BB961CCF70980034DE80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ED52BB981CCF70980034DE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED52BB9A1CCF70980034DE80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED52BB9F1CCF70980034DE80 /* DVT-Store_watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DVT-Store_watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED52BBA51CCF70980034DE80 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ED52BBA61CCF70980034DE80 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		ED52BBA81CCF70980034DE80 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		ED52BBAA1CCF70980034DE80 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		ED52BBAC1CCF70980034DE80 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		ED52BBAE1CCF70980034DE80 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		ED52BBB01CCF70980034DE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED52BBB21CCF70980034DE80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7829291C7355A20017DE80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED8A05AA1C71BF4A00422101 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		ED8A05AC1C71EEFA00422101 /* ProductDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
@@ -62,10 +130,18 @@
 		ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cartViewCell.swift; sourceTree = "<group>"; };
 		EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutUIControllers.swift; sourceTree = "<group>"; };
 		EDC3870C1C7203DE00193742 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EDD48CFB1CD3341D00B651F7 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ED3F229D1C6DC19D00953E9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED52BB9C1CCF70980034DE80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,6 +156,8 @@
 			children = (
 				ED7829291C7355A20017DE80 /* Default-568h@2x.png */,
 				ED3F22A21C6DC19D00953E9C /* DVT-Store_iOS */,
+				ED52BB941CCF70980034DE80 /* DVT-Store_watchOS */,
+				ED52BBA31CCF70980034DE80 /* DVT-Store_watchOS Extension */,
 				ED3F22A11C6DC19D00953E9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */,
+				ED52BB931CCF70980034DE80 /* DVT-Store_watchOS.app */,
+				ED52BB9F1CCF70980034DE80 /* DVT-Store_watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,8 +200,42 @@
 				ED95AFE41C8C86A600BDEC08 /* CartViewController.swift */,
 				ED95AFE61C8CA03E00BDEC08 /* cartViewCell.swift */,
 				EDAF128E1C9197B00017D58B /* CheckoutUIControllers.swift */,
+				EDD48CFB1CD3341D00B651F7 /* TabBar.swift */,
 			);
 			path = "DVT-Store_iOS";
+			sourceTree = "<group>";
+		};
+		ED52BB941CCF70980034DE80 /* DVT-Store_watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				ED52BB951CCF70980034DE80 /* Interface.storyboard */,
+				ED52BB981CCF70980034DE80 /* Assets.xcassets */,
+				ED52BB9A1CCF70980034DE80 /* Info.plist */,
+			);
+			path = "DVT-Store_watchOS";
+			sourceTree = "<group>";
+		};
+		ED52BBA31CCF70980034DE80 /* DVT-Store_watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED52BBA61CCF70980034DE80 /* InterfaceController.swift */,
+				ED52BBA81CCF70980034DE80 /* ExtensionDelegate.swift */,
+				ED52BBAA1CCF70980034DE80 /* NotificationController.swift */,
+				ED52BBAC1CCF70980034DE80 /* GlanceController.swift */,
+				ED52BBAE1CCF70980034DE80 /* ComplicationController.swift */,
+				ED52BBB01CCF70980034DE80 /* Assets.xcassets */,
+				ED52BBB21CCF70980034DE80 /* Info.plist */,
+				ED52BBA41CCF70980034DE80 /* Supporting Files */,
+			);
+			path = "DVT-Store_watchOS Extension";
+			sourceTree = "<group>";
+		};
+		ED52BBA41CCF70980034DE80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED52BBA51CCF70980034DE80 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,15 +248,51 @@
 				ED3F229C1C6DC19D00953E9C /* Sources */,
 				ED3F229D1C6DC19D00953E9C /* Frameworks */,
 				ED3F229E1C6DC19D00953E9C /* Resources */,
+				ED52BBBD1CCF70980034DE80 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED52BBB41CCF70980034DE80 /* PBXTargetDependency */,
 			);
 			name = "DVT-Store_iOS";
 			productName = "DVT-Store_iOS";
 			productReference = ED3F22A01C6DC19D00953E9C /* DVT-Store_iOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		ED52BB921CCF70980034DE80 /* DVT-Store_watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED52BBBC1CCF70980034DE80 /* Build configuration list for PBXNativeTarget "DVT-Store_watchOS" */;
+			buildPhases = (
+				ED52BB911CCF70980034DE80 /* Resources */,
+				ED52BBBB1CCF70980034DE80 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED52BBA21CCF70980034DE80 /* PBXTargetDependency */,
+			);
+			name = "DVT-Store_watchOS";
+			productName = "DVT-Store_watchOS";
+			productReference = ED52BB931CCF70980034DE80 /* DVT-Store_watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		ED52BB9E1CCF70980034DE80 /* DVT-Store_watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED52BBBA1CCF70980034DE80 /* Build configuration list for PBXNativeTarget "DVT-Store_watchOS Extension" */;
+			buildPhases = (
+				ED52BB9B1CCF70980034DE80 /* Sources */,
+				ED52BB9C1CCF70980034DE80 /* Frameworks */,
+				ED52BB9D1CCF70980034DE80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DVT-Store_watchOS Extension";
+			productName = "DVT-Store_watchOS Extension";
+			productReference = ED52BB9F1CCF70980034DE80 /* DVT-Store_watchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -150,12 +300,20 @@
 		ED3F22981C6DC19D00953E9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = DVT;
 				TargetAttributes = {
 					ED3F229F1C6DC19D00953E9C = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = AZR8YBS46N;
+					};
+					ED52BB921CCF70980034DE80 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = AZR8YBS46N;
+					};
+					ED52BB9E1CCF70980034DE80 = {
+						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = AZR8YBS46N;
 					};
 				};
@@ -174,6 +332,8 @@
 			projectRoot = "";
 			targets = (
 				ED3F229F1C6DC19D00953E9C /* DVT-Store_iOS */,
+				ED52BB921CCF70980034DE80 /* DVT-Store_watchOS */,
+				ED52BB9E1CCF70980034DE80 /* DVT-Store_watchOS Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +359,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED52BB911CCF70980034DE80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED52BB991CCF70980034DE80 /* Assets.xcassets in Resources */,
+				ED52BB971CCF70980034DE80 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED52BB9D1CCF70980034DE80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED52BBB11CCF70980034DE80 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,13 +392,41 @@
 				ED8A05AD1C71EEFA00422101 /* ProductDataSource.swift in Sources */,
 				ED4E15751C7C1EED00E028A5 /* BasketUtility.swift in Sources */,
 				ED3F22A41C6DC19D00953E9C /* AppDelegate.swift in Sources */,
+				EDD48CFC1CD3341D00B651F7 /* TabBar.swift in Sources */,
 				EDAF128F1C9197B00017D58B /* CheckoutUIControllers.swift in Sources */,
 				ED95AFE71C8CA03E00BDEC08 /* cartViewCell.swift in Sources */,
 				EDC3870D1C7203DE00193742 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED52BB9B1CCF70980034DE80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED543AB11CD1E689002A8C7F /* ProductDataSource.swift in Sources */,
+				ED52BBAB1CCF70980034DE80 /* NotificationController.swift in Sources */,
+				ED52BBA91CCF70980034DE80 /* ExtensionDelegate.swift in Sources */,
+				ED52BBAF1CCF70980034DE80 /* ComplicationController.swift in Sources */,
+				ED52BBA71CCF70980034DE80 /* InterfaceController.swift in Sources */,
+				ED52BBAD1CCF70980034DE80 /* GlanceController.swift in Sources */,
+				ED543AB01CD1E676002A8C7F /* featuredProduct.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED52BBA21CCF70980034DE80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED52BB9E1CCF70980034DE80 /* DVT-Store_watchOS Extension */;
+			targetProxy = ED52BBA11CCF70980034DE80 /* PBXContainerItemProxy */;
+		};
+		ED52BBB41CCF70980034DE80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED52BB921CCF70980034DE80 /* DVT-Store_watchOS */;
+			targetProxy = ED52BBB31CCF70980034DE80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ED3F22A71C6DC19D00953E9C /* Main.storyboard */ = {
@@ -238,6 +443,14 @@
 				ED3F22B01C6DC19D00953E9C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ED52BB951CCF70980034DE80 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED52BB961CCF70980034DE80 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -359,6 +572,72 @@
 			};
 			name = Release;
 		};
+		ED52BBB61CCF70980034DE80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DVT_Store_watchOS_Extension;
+				INFOPLIST_FILE = "DVT-Store_watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		ED52BBB71CCF70980034DE80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DVT_Store_watchOS_Extension;
+				INFOPLIST_FILE = "DVT-Store_watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		ED52BBB81CCF70980034DE80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "DVT-Store_watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		ED52BBB91CCF70980034DE80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "DVT-Store_watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jhb.dvt.DVT-Store-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -376,6 +655,24 @@
 			buildConfigurations = (
 				ED3F22B61C6DC19D00953E9C /* Debug */,
 				ED3F22B71C6DC19D00953E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED52BBBA1CCF70980034DE80 /* Build configuration list for PBXNativeTarget "DVT-Store_watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED52BBB81CCF70980034DE80 /* Debug */,
+				ED52BBB91CCF70980034DE80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED52BBBC1CCF70980034DE80 /* Build configuration list for PBXNativeTarget "DVT-Store_watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED52BBB61CCF70980034DE80 /* Debug */,
+				ED52BBB71CCF70980034DE80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

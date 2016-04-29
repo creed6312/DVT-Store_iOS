@@ -18,10 +18,14 @@ class CheckOutUIControllers : UIViewController
     
     @IBOutlet weak var tick: UIImageView!
     
+    @IBOutlet weak var viewItemOrder: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewItemOrder.layer.cornerRadius = 50
         
         jsonParser("CheckOut")
     }
@@ -37,7 +41,11 @@ class CheckOutUIControllers : UIViewController
         
         
         print(String(BasketUtility.basketList.count) + " basket")
+            
+           // *******Testing********
         for i in 0...BasketUtility.basketList.count - 1
+        
+        //          for i in 0.stride(to: BasketUtility.basketList.count - 1, by: 1)
         {
             
             
@@ -65,6 +73,7 @@ class CheckOutUIControllers : UIViewController
         }
         
         for i in 0...BasketUtility.basketList.count - 1
+        //for i in 0.stride(to: BasketUtility.basketList.count - 1, by: 1)
         {
             
             
@@ -90,7 +99,8 @@ class CheckOutUIControllers : UIViewController
              print( "asasd" +  tempCountString)
             
         }
-
+            
+        
         
         
         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
@@ -133,6 +143,18 @@ class CheckOutUIControllers : UIViewController
                 }.resume()
             
         }
+        
+        
+    }
+    
+    @IBAction func doneButton(sender: UIButton) {
+        
+//        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let mainView =  self.storyboard?.instantiateViewControllerWithIdentifier("MainView") as! ViewController
+//        self.presentViewController(mainView, animated: true, completion: nil)
+        self.navigationController!.pushViewController(mainView, animated: true)
+        
         
         
     }
